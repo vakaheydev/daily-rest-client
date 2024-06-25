@@ -10,6 +10,7 @@ public interface CommonClient<T> {
     List<T> getAll();
 
     T getById(Integer id);
+    T getByUniqueName(String uniqueName);
 
     T create(T entity);
 

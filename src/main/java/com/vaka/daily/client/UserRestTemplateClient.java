@@ -16,7 +16,7 @@ import java.util.Objects;
 
 @Component
 @Slf4j
-public class UserRestTemplateClient implements UserClient, CommonClient<User> {
+public class UserRestTemplateClient implements UserClient {
     RestTemplate restTemplate;
     private static final String URL = "http://localhost:8080/api/user";
 
@@ -40,16 +40,6 @@ public class UserRestTemplateClient implements UserClient, CommonClient<User> {
         return usersList;
     }
 
-    public List<User> secondGetAll() {
-        RestClient restClient = RestClient.create();
-
-        return Arrays.stream(restClient.get()
-                .uri(URL)
-                .retrieve()
-                .body(User[].class))
-                .toList();
-    }
-
     @Override
     public User getById(Integer id) {
         try {
@@ -67,6 +57,10 @@ public class UserRestTemplateClient implements UserClient, CommonClient<User> {
         }
     }
 
+    @Override
+    public User getByUniqueName(String uniqueName) {
+        throw new IllegalStateException("Not implemented method");
+    }
 
     @Override
     public User create(User entity) {

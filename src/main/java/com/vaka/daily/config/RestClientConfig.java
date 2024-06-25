@@ -1,20 +1,24 @@
 package com.vaka.daily.config;
 
-import jakarta.validation.Valid;
+import com.vaka.daily.util.MyResponseErrorHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestClient;
 
 @Configuration
 @PropertySource("classpath:application.properties")
-public class WebClientConfig {
+public class RestClientConfig {
     @Value("app.connection.url")
     private String url;
 
     @Bean
-    public WebClient webClient() {
-        return WebClient.create(url);
+    public RestClient restClient() {
+        return RestClient.builder()
+                .baseUrl(url)
+                .defaultHeader("Content-Type", "application/json")
+                .defaultStatusHandler(new MyResponseErrorHandler())
+                .build();
     }
 }

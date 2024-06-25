@@ -1,5 +1,5 @@
-import com.vaka.daily.client.UserRestTemplateClient;
-import com.vaka.daily.config.RestTemplateConfig;
+import com.vaka.daily.client.UserRestClientClient;
+import com.vaka.daily.config.RestClientConfig;
 import com.vaka.daily.exception.UserNotFoundException;
 import com.vaka.daily.model.User;
 import lombok.extern.slf4j.Slf4j;
@@ -14,11 +14,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestTemplateConfig.class, UserRestTemplateClient.class})
+@SpringBootTest(classes = {RestClientConfig.class, UserRestClientClient.class})
 @Slf4j
-public class UserRestTemplateTest {
+public class UserRestClientClientTest {
     @Autowired
-    UserRestTemplateClient client;
+    UserRestClientClient client;
 
     private static Integer createdUserID;
 
@@ -50,10 +50,29 @@ public class UserRestTemplateTest {
         assertEquals("new_login", user.getLogin());
     }
 
-    @DisplayName("Should throw UserNotFound")
+    @DisplayName("Should return user by login")
+    @Test
+    void testGetByLogin() {
+        String login = "vaka";
+        User user = client.getByUniqueName(login);
+
+        assertNotNull(user);
+
+        log.info("User with login {}: {}", login, user);
+
+        assertEquals(1, user.getId());
+    }
+
+    @DisplayName("Should throw UserNotFound (id)")
     @Test
     void testGetByWrongId() {
         assertThrows(UserNotFoundException.class, () -> client.getById(4));
+    }
+
+    @DisplayName("Should throw UserNotFound (name)")
+    @Test
+    void testGetByWrongName() {
+        assertThrows(UserNotFoundException.class, () -> client.getByUniqueName("abc"));
     }
 
     @DisplayName("Should throw Runtime (duplicate login)")
