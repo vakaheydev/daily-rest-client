@@ -1,4 +1,4 @@
-package com.vaka.daily.client;
+package com.vaka.daily.client.blocked;
 
 import com.vaka.daily.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,7 @@
-package com.vaka.daily.client;
+package com.vaka.daily.client.blocked;
 
+import com.vaka.daily.client.blocked.AbstractRestClient;
+import com.vaka.daily.client.blocked.UserClient;
 import com.vaka.daily.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

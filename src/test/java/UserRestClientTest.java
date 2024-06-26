@@ -1,4 +1,4 @@
-import com.vaka.daily.client.UserRestClient;
+import com.vaka.daily.client.blocked.UserRestClient;
 import com.vaka.daily.config.RestClientConfig;
 import com.vaka.daily.exception.UserNotFoundException;
 import com.vaka.daily.exception.ValidationException;

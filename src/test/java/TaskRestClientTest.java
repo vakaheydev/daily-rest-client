@@ -1,4 +1,4 @@
-import com.vaka.daily.client.TaskRestClient;
+import com.vaka.daily.client.blocked.TaskRestClient;
 import com.vaka.daily.config.RestClientConfig;
 import com.vaka.daily.exception.TaskNotFoundException;
 import com.vaka.daily.model.Schedule;

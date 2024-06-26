@@ -1,4 +1,4 @@
-package com.vaka.daily.client;
+package com.vaka.daily.client.blocked;
 
 import com.vaka.daily.abstraction.CommonClient;
 import lombok.extern.slf4j.Slf4j;

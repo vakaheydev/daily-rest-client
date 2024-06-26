@@ -1,4 +1,4 @@
-import com.vaka.daily.client.ScheduleRestClient;
+import com.vaka.daily.client.blocked.ScheduleRestClient;
 import com.vaka.daily.config.RestClientConfig;
 import com.vaka.daily.exception.ScheduleNotFoundException;
 import com.vaka.daily.model.Schedule;
