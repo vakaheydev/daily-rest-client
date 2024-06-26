@@ -109,13 +109,13 @@ public class UserRestClientTest {
     @Order(3)
     void testPut() {
         assertNotNull(createdUser);
-        String updatedLogin = "updated_login";
-        createdUser.setLogin(updatedLogin);
+        String newLogin = "updated_login";
+        createdUser.setLogin(newLogin);
 
         User updatedUser = client.updateById(createdUser.getId(), createdUser);
         log.info("Updated user: {}", updatedUser);
 
-        assertEquals("updated_login", updatedUser.getLogin());
+        assertEquals(newLogin, updatedUser.getLogin());
         assertEquals(createdUser.getId(), updatedUser.getId());
     }
 

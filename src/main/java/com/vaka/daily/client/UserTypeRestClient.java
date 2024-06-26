@@ -3,19 +3,18 @@ package com.vaka.daily.client;
 import com.vaka.daily.model.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestClient;
 
 @Component
-public class UserTypeRestClient extends AbstractRestClient<UserType> {
-    RestClient client;
+public class UserTypeRestClient extends AbstractRestClient<UserType> implements UserTypeClient {
+    org.springframework.web.client.RestClient client;
 
     @Autowired
-    public UserTypeRestClient(RestClient client) {
+    public UserTypeRestClient(org.springframework.web.client.RestClient client) {
         this.client = client;
     }
 
     @Override
-    public RestClient getRestClient() {
+    public org.springframework.web.client.RestClient getRestClient() {
         return client;
     }
 

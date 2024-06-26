@@ -108,13 +108,13 @@ public class UserTypeRestClientTest {
     @Order(3)
     void testPut() {
         assertNotNull(createdUserType);
-        String updatedName = "updated_name";
-        createdUserType.setName(updatedName);
+        String newName = "updated_name";
+        createdUserType.setName(newName);
 
         UserType updatedUserType = client.updateById(createdUserType.getId(), createdUserType);
         log.info("Updated user type: {}", updatedUserType);
 
-        assertEquals(updatedName, updatedUserType.getName());
+        assertEquals(newName, updatedUserType.getName());
         assertEquals(createdUserType.getId(), updatedUserType.getId());
     }
 
