@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/TaskClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/TaskRestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +75,11 @@
       <recent name="com.vaka.daily.service" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="JUnit.java in vaka-daily-client">
     <configuration name="Client Daily" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.vaka.daily.Application" />
@@ -104,10 +106,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="vaka-daily-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.vaka.daily.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Client Daily" />
       <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
       <item itemvalue="JUnit.java in vaka-daily-client" />
+      <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
@@ -133,7 +144,8 @@
       <workItem from="1719386259057" duration="1559000" />
       <workItem from="1719387861352" duration="741000" />
       <workItem from="1719396257747" duration="470000" />
-      <workItem from="1719402135865" duration="6190000" />
+      <workItem from="1719402135865" duration="6952000" />
+      <workItem from="1719410323215" duration="106000" />
     </task>
     <servers />
   </component>

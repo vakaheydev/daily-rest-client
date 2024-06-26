@@ -1,9 +1,9 @@
-import com.vaka.daily.client.blocked.TaskRestClient;
-import com.vaka.daily.config.RestClientConfig;
-import com.vaka.daily.exception.TaskNotFoundException;
-import com.vaka.daily.model.Schedule;
-import com.vaka.daily.model.Task;
-import com.vaka.daily.model.User;
+import com.vaka.daily_client.client.blocked.TaskRestClient;
+import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.exception.TaskNotFoundException;
+import com.vaka.daily_client.model.Schedule;
+import com.vaka.daily_client.model.Task;
+import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;

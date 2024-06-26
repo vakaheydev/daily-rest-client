@@ -1,8 +1,8 @@
-import com.vaka.daily.client.blocked.UserTypeRestClient;
-import com.vaka.daily.config.RestClientConfig;
-import com.vaka.daily.exception.UserTypeNotFoundException;
-import com.vaka.daily.exception.ValidationException;
-import com.vaka.daily.model.UserType;
+import com.vaka.daily_client.client.blocked.UserTypeRestClient;
+import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.exception.UserTypeNotFoundException;
+import com.vaka.daily_client.exception.ValidationException;
+import com.vaka.daily_client.model.UserType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
