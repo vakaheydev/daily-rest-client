@@ -20,7 +20,7 @@ public class UserRestClientClientTest {
     @Autowired
     UserRestClientClient client;
 
-    private static Integer createdUserID;
+    private static User createdUser;
 
     @BeforeEach
     void setup() {
@@ -29,25 +29,26 @@ public class UserRestClientClientTest {
 
 
     @DisplayName("Should return all users")
+    @Order(1)
     @Test
     void testGetAll() {
         List<User> users = client.getAll();
 
         log.info("Users list: {}", users.toString());
 
-        assertEquals(4, users.size());
+        assertEquals(3, users.size());
     }
 
-    @DisplayName("Should return user by id")
+    @DisplayName("Should return user by ID")
     @Test
     void testGetById() {
-        User user = client.getById(18);
+        User user = client.getById(1);
 
         assertNotNull(user);
 
-        log.info("User with ID 10: {}", user);
+        log.info("User with ID 1: {}", user);
 
-        assertEquals("new_login", user.getLogin());
+        assertEquals("vaka", user.getLogin());
     }
 
     @DisplayName("Should return user by login")
@@ -66,7 +67,7 @@ public class UserRestClientClientTest {
     @DisplayName("Should throw UserNotFound (id)")
     @Test
     void testGetByWrongId() {
-        assertThrows(UserNotFoundException.class, () -> client.getById(4));
+        assertThrows(UserNotFoundException.class, () -> client.getById(125));
     }
 
     @DisplayName("Should throw UserNotFound (name)")
@@ -85,21 +86,37 @@ public class UserRestClientClientTest {
 
     @DisplayName("Should create new user")
     @Test
-    @Order(1)
+    @Order(2)
     void testPost2() {
         User user = new User("new_login", "new_password", "firstName", "secondName", "patronymic");
 
         User postedUser = client.create(user);
-        createdUserID = postedUser.getId();
+        createdUser = postedUser;
 
         assertNotNull(postedUser);
     }
 
+    @DisplayName("Should update user by ID")
+    @Test
+    @Order(3)
+    void testPut() {
+        assertNotNull(createdUser);
+        String updatedLogin = "updated_login";
+        createdUser.setLogin(updatedLogin);
+
+        User updatedUser = client.updateById(createdUser.getId(), createdUser);
+
+        assertEquals("updated_login", updatedUser.getLogin());
+        assertEquals(createdUser.getId(), updatedUser.getId());
+    }
+
     @DisplayName("Should delete user by id")
     @Test
-    @Order(2)
+    @Order(4)
     void testDelete() {
-        assertNotNull(createdUserID);
-        client.deleteById(createdUserID);
+        assertNotNull(createdUser.getId());
+        client.deleteById(createdUser.getId());
+
+        assertThrows(UserNotFoundException.class, () -> client.getById(createdUser.getId()));
     }
 }

@@ -3,11 +3,15 @@ package com.vaka.daily.exception;
 import org.springframework.validation.BindingResult;
 
 public class ValidationException extends RuntimeException {
-    private final BindingResult bindingResult;
+    private BindingResult bindingResult;
 
     public ValidationException(BindingResult bindingResult) {
         super("Validation failed");
         this.bindingResult = bindingResult;
+    }
+
+    public ValidationException(String message) {
+        super(message);
     }
 
     public BindingResult getBindingResult() {

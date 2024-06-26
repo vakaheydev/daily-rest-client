@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserReactiveWebClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/RestClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/ResponseError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/util/MyResponseErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/Stub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandlerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandlerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/MyResponseErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/ScheduleErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/TaskErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserTypeErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ServerNotRespondException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/DomainType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserReactiveClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserReactiveClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestTemplateClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestTemplateClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonReactiveClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonReactiveClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/RestClientConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/WebClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestTemplateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/util/MyResponseErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestTemplateTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +64,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Vaka/Documents/mvc-vaka-daily/src/main/java/com/vaka/daily/exception&quot;,
@@ -125,23 +131,13 @@
       <workItem from="1718961736498" duration="9237000" />
       <workItem from="1718982141661" duration="2137000" />
       <workItem from="1719318614381" duration="7207000" />
-      <workItem from="1719332323534" duration="636000" />
+      <workItem from="1719332323534" duration="2160000" />
+      <workItem from="1719346902183" duration="4615000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily/util/MyResponseErrorHandler.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

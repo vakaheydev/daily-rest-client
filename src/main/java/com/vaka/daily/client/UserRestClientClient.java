@@ -4,6 +4,7 @@ import com.vaka.daily.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClient;
@@ -48,17 +49,29 @@ public class UserRestClientClient implements UserClient {
 
     @Override
     public User create(User entity) {
-        return null;
+        return restClient.post()
+                .uri(URL + "/user")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(entity)
+                .retrieve()
+                .body(User.class);
     }
 
     @Override
     public User updateById(Integer id, User entity) {
-        return null;
+        return restClient.put()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(entity)
+                .retrieve()
+                .body(User.class);
     }
 
     @Override
     public void deleteById(Integer id) {
-
+        restClient.delete()
+                .uri(URL + "/user/{id}", id)
+                .retrieve()
+                .toBodilessEntity();
     }
 
     @Override

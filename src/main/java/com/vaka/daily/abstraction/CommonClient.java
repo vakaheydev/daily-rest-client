@@ -1,5 +1,6 @@
 package com.vaka.daily.abstraction;
 
+import com.vaka.daily.exception.ServerNotRespondException;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.ResourceAccessException;
