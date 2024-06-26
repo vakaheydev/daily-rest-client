@@ -1,12 +1,10 @@
-import com.vaka.daily.client.UserRestClientClient;
+import com.vaka.daily.client.UserRestClient;
 import com.vaka.daily.config.RestClientConfig;
 import com.vaka.daily.exception.UserNotFoundException;
+import com.vaka.daily.exception.ValidationException;
 import com.vaka.daily.model.User;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,17 +12,26 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, UserRestClientClient.class})
+@SpringBootTest(classes = {RestClientConfig.class, UserRestClient.class})
 @Slf4j
-public class UserRestClientClientTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+//@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+public class UserRestClientTest {
     @Autowired
-    UserRestClientClient client;
+    UserRestClient client;
 
     private static User createdUser;
 
     @BeforeEach
     void setup() {
         client.isServerAlive();
+    }
+
+    @DisplayName("Server should be alive")
+    @Order(0)
+    @Test
+    void testServerIsAlive() {
+        assertTrue(client.isServerAlive());
     }
 
 
@@ -76,12 +83,12 @@ public class UserRestClientClientTest {
         assertThrows(UserNotFoundException.class, () -> client.getByUniqueName("abc"));
     }
 
-    @DisplayName("Should throw Runtime (duplicate login)")
+    @DisplayName("Should throw Validation (duplicate login)")
     @Test
     void testPost() {
         User user = new User("vaka", "new_password", "firstName", "secondName", "patronymic");
 
-        assertThrows(RuntimeException.class, () -> client.create(user));
+        assertThrows(ValidationException.class, () -> client.create(user));
     }
 
     @DisplayName("Should create new user")
@@ -92,6 +99,7 @@ public class UserRestClientClientTest {
 
         User postedUser = client.create(user);
         createdUser = postedUser;
+        log.info("Created user: {}", createdUser);
 
         assertNotNull(postedUser);
     }
@@ -105,6 +113,7 @@ public class UserRestClientClientTest {
         createdUser.setLogin(updatedLogin);
 
         User updatedUser = client.updateById(createdUser.getId(), createdUser);
+        log.info("Updated user: {}", updatedUser);
 
         assertEquals("updated_login", updatedUser.getLogin());
         assertEquals(createdUser.getId(), updatedUser.getId());
@@ -116,6 +125,8 @@ public class UserRestClientClientTest {
     void testDelete() {
         assertNotNull(createdUser.getId());
         client.deleteById(createdUser.getId());
+
+        log.info("User with ID {} was deleted", createdUser.getId());
 
         assertThrows(UserNotFoundException.class, () -> client.getById(createdUser.getId()));
     }

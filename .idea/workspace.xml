@@ -5,28 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/Stub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandlerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandlerUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/MyResponseErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/ScheduleErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/TaskErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserTypeErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ServerNotRespondException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/DomainType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/AbstractRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserTypeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserTypeRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/AbstractDomainErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonReactiveClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/abstraction/CommonReactiveClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/RestClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/config/WebClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/exception/ValidationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/util/MyResponseErrorHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestTemplateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserRestClientClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/DomainErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/MyResponseErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/MyResponseErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/ScheduleErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/ScheduleErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/TaskErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/TaskErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserTypeErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/errorhandling/handler/UserTypeErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -95,27 +90,31 @@
       <recent name="com.vaka.daily.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MVC Daily">
-    <configuration name="MVC Daily" type="Application" factoryName="Application">
+  <component name="RunManager">
+    <configuration name="Client Daily" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.vaka.daily.Application" />
       <module name="vaka-daily-client" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRestClientClientTest.testGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRestClientTest.testGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vaka-daily-client" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserRestClientClientTest" />
+      <option name="MAIN_CLASS_NAME" value="UserRestClientTest" />
       <option name="METHOD_NAME" value="testGetAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Client Daily" />
+      <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserRestClientClientTest.testGetAll" />
+        <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
       </list>
     </recent_temporary>
   </component>
@@ -133,6 +132,10 @@
       <workItem from="1719318614381" duration="7207000" />
       <workItem from="1719332323534" duration="2160000" />
       <workItem from="1719346902183" duration="4615000" />
+      <workItem from="1719386259057" duration="1559000" />
+      <workItem from="1719387861352" duration="741000" />
+      <workItem from="1719396257747" duration="470000" />
+      <workItem from="1719402135865" duration="4696000" />
     </task>
     <servers />
   </component>

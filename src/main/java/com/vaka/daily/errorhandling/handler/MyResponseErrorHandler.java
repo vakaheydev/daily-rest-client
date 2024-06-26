@@ -37,7 +37,7 @@ public class MyResponseErrorHandler implements ResponseErrorHandler {
         ObjectMapper objectMapper = new ObjectMapper();
         ResponseError error = objectMapper.readValue(body, ResponseError.class);
 
-        log.error("Response ERROR: {}", error.toString());
+        log.error("Response ERROR on '{}': {}", url, error.toString());
 
         DomainErrorHandler domainErrorHandler = DomainErrorHandlerFactory.getErrorHandler(domainType);
         domainErrorHandler.handleError(error, url);

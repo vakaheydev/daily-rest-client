@@ -1,22 +1,22 @@
 package com.vaka.daily.errorhandling.handler;
 
-import com.vaka.daily.exception.UserNotFoundException;
-import com.vaka.daily.model.ResponseError;
+import com.vaka.daily.exception.ObjectNotFoundException;
+import com.vaka.daily.exception.UserTypeNotFoundException;
 
-import java.io.IOException;
-import java.net.URI;
-
-public class UserTypeErrorHandler implements DomainErrorHandler {
+public class UserTypeErrorHandler extends AbstractDomainErrorHandler {
     @Override
-    public void handleError(ResponseError error, URI url) throws IOException {
-        if (error.getError().equals("UserTypeNotFoundException")) {
-            DomainErrorHandlerUtils.NotFoundExceptionType type =
-                    DomainErrorHandlerUtils.resolveNotFoundException(error);
-            if (type.causedById()) {
-                throw new UserNotFoundException(type.getId());
-            } else {
-                throw new UserNotFoundException(type.value());
-            }
+    public String getNotFoundExceptionName() {
+        return "UserTypeNotFoundException";
+    }
+
+    @Override
+    public ObjectNotFoundException getNotFoundException(Integer id, String name) {
+        if (name == null) {
+            return new UserTypeNotFoundException(id);
+        } else if (id == null) {
+            return new UserTypeNotFoundException(name);
+        } else {
+            return new UserTypeNotFoundException(id, name);
         }
     }
 }

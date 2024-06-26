@@ -1,22 +1,27 @@
 package com.vaka.daily.errorhandling.handler;
 
+import com.vaka.daily.exception.ObjectNotFoundException;
+import com.vaka.daily.exception.ScheduleNotFoundException;
 import com.vaka.daily.exception.UserNotFoundException;
 import com.vaka.daily.model.ResponseError;
 
 import java.io.IOException;
 import java.net.URI;
 
-public class ScheduleErrorHandler implements DomainErrorHandler {
+public class ScheduleErrorHandler extends AbstractDomainErrorHandler {
     @Override
-    public void handleError(ResponseError error, URI url) throws IOException {
-        if (error.getError().equals("ScheduleNotFoundException")) {
-            DomainErrorHandlerUtils.NotFoundExceptionType type =
-                    DomainErrorHandlerUtils.resolveNotFoundException(error);
-            if (type.causedById()) {
-                throw new UserNotFoundException(type.getId());
-            } else {
-                throw new UserNotFoundException(type.value());
-            }
+    public String getNotFoundExceptionName() {
+        return "ScheduleNotFoundException";
+    }
+
+    @Override
+    public ObjectNotFoundException getNotFoundException(Integer id, String name) {
+        if (name == null) {
+            return new ScheduleNotFoundException(id);
+        } else if (id == null) {
+            return new ScheduleNotFoundException(name);
+        } else {
+            return new ScheduleNotFoundException(id, name);
         }
     }
 }

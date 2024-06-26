@@ -1,6 +1,7 @@
 package com.vaka.daily;
 
-import com.vaka.daily.client.UserRestClientClient;
+import com.vaka.daily.client.UserRestClient;
+import com.vaka.daily.model.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,9 +11,10 @@ public class Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
 
-//        UserRestClientClient client = ctx.getBean("userRestClientClient", UserRestClientClient.class);
+//        UserRestClient client = ctx.getBean("userRestClient", UserRestClient.class);
 //        if(client.isServerAlive()) {
-//            client.getById(5);
+//            User user = new User();
+//            client.create(user);
 //        }
     }
 }
