@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(classes = {RestClientConfig.class, UserRestClient.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-//@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UserRestClientTest {
     @Autowired
     UserRestClient client;

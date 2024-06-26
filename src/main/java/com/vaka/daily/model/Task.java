@@ -11,6 +11,19 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class Task {
+    public Task(Integer id, String name, String description, LocalDateTime deadline, Boolean status,
+                Schedule schedule) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.status = status;
+        this.schedule = schedule;
+    }
+
+    public Task() {
+    }
+
     private Integer id;
 
     @NotEmpty

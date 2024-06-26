@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/ScheduleClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/ScheduleRestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserTypeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/UserTypeRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/TaskClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/client/TaskRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily/model/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
       <recent name="com.vaka.daily.service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.java in vaka-daily-client">
     <configuration name="Client Daily" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.vaka.daily.Application" />
       <module name="vaka-daily-client" />
@@ -134,7 +133,7 @@
       <workItem from="1719386259057" duration="1559000" />
       <workItem from="1719387861352" duration="741000" />
       <workItem from="1719396257747" duration="470000" />
-      <workItem from="1719402135865" duration="5667000" />
+      <workItem from="1719402135865" duration="6190000" />
     </task>
     <servers />
   </component>
