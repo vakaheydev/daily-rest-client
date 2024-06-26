@@ -1,6 +1,5 @@
 package com.vaka.daily.abstraction;
 
-import com.vaka.daily.exception.ServerNotRespondException;
 import reactor.core.publisher.Mono;
 
 import java.util.List;

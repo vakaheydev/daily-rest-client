@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClient;
 @Slf4j
 public class UserRestClient extends AbstractRestClient<User> implements UserClient {
     RestClient restClient;
+
     @Autowired
     public UserRestClient(RestClient restClient) {
         this.restClient = restClient;

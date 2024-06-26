@@ -66,7 +66,7 @@ public class User {
 
     @Override
     public String toString() {
-        if(userType == null) {
+        if (userType == null) {
             return "User{" +
                     "id=" + id +
                     ", login='" + login + '\'' +

@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Abstract rest client. Uses {@link org.springframework.web.client.RestClient RestClient} for its internal work
+ *
  * @param <T> Domain type
  */
 @Slf4j
@@ -90,6 +91,7 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
 
     /**
      * Get domain part of URL e.g. "/api/user"
+     *
      * @return Domain part of URL
      */
     public abstract String getDomainUrl();
@@ -97,6 +99,7 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
     /**
      * Get name of entity unique name. For example for {@link com.vaka.daily.model.User User} it is "login", for
      * {@link com.vaka.daily.model.Task Task} - "name"
+     *
      * @return Name of entity unique name
      */
     public abstract String getNameOfUniqueName();

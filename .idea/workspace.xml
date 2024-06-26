@@ -90,7 +90,7 @@
       <recent name="com.vaka.daily.service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.java in vaka-daily-client">
     <configuration name="Client Daily" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.vaka.daily.Application" />
       <module name="vaka-daily-client" />
@@ -108,12 +108,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in vaka-daily-client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Client Daily" />
       <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
+      <item itemvalue="JUnit.java in vaka-daily-client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in vaka-daily-client" />
         <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
       </list>
     </recent_temporary>

@@ -35,11 +35,11 @@ public abstract class AbstractDomainErrorHandler implements DomainErrorHandler {
 
     public abstract ObjectNotFoundException getNotFoundException(Integer id, String name);
 
-    static void handleValidationException(ResponseError error,  URI url) {
+    static void handleValidationException(ResponseError error, URI url) {
         throw new ValidationException(error.getMessage());
     }
 
-    static void handleDataIntegrityException(ResponseError error,  URI url) {
+    static void handleDataIntegrityException(ResponseError error, URI url) {
         throw new ValidationException("Data integrity error: " + error.getMessage());
     }
 }

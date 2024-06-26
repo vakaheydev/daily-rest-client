@@ -2,7 +2,6 @@ package com.vaka.daily.model.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
 
 public class UserDTO {
     @NotEmpty

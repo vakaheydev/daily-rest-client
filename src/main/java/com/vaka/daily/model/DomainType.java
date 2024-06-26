@@ -1,7 +1,6 @@
 package com.vaka.daily.model;
 
 import java.net.URI;
-import java.net.URL;
 import java.util.Optional;
 
 public enum DomainType {

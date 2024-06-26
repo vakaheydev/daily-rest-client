@@ -1,10 +1,7 @@
-import com.vaka.daily.client.UserRestClient;
 import com.vaka.daily.client.UserTypeRestClient;
 import com.vaka.daily.config.RestClientConfig;
-import com.vaka.daily.exception.UserNotFoundException;
 import com.vaka.daily.exception.UserTypeNotFoundException;
 import com.vaka.daily.exception.ValidationException;
-import com.vaka.daily.model.User;
 import com.vaka.daily.model.UserType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
@@ -14,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest(classes = {RestClientConfig.class, UserTypeRestClient.class})
 @Slf4j

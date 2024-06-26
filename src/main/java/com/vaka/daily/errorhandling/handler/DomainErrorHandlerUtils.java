@@ -1,10 +1,9 @@
 package com.vaka.daily.errorhandling.handler;
 
 import com.vaka.daily.model.ResponseError;
-import org.springframework.scheduling.support.SimpleTriggerContext;
 
 public class DomainErrorHandlerUtils {
-    public record NotFoundExceptionType (String typeName, String value) {
+    public record NotFoundExceptionType(String typeName, String value) {
         public boolean causedById() {
             return typeName.equals("id");
         }
@@ -17,6 +16,7 @@ public class DomainErrorHandlerUtils {
             return Integer.parseInt(this.value());
         }
     }
+
     public static NotFoundExceptionType resolveNotFoundException(ResponseError error) {
         if (error.getMessage().contains("ID {")) {
             String id = error.getMessage().split("\\{")[1].split("}")[0];

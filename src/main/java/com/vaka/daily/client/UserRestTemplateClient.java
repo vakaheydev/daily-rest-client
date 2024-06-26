@@ -1,6 +1,5 @@
 package com.vaka.daily.client;
 
-import com.vaka.daily.abstraction.CommonClient;
 import com.vaka.daily.exception.UserNotFoundException;
 import com.vaka.daily.model.User;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.*;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,8 +33,7 @@ public class UserRestTemplateClient implements UserClient {
         try {
             User[] users = restTemplate.getForObject(URL, User[].class);
             usersList = Arrays.stream(Objects.requireNonNull(users)).toList();
-        }
-        catch (HttpClientErrorException ex) {
+        } catch (HttpClientErrorException ex) {
             log.error("Error with fetching all users, responseBody: " + ex.getResponseBodyAsString());
             String responseBody = ex.getResponseBodyAsString();
             throw new RuntimeException("An error occurred while fetching all users: " + responseBody);
@@ -49,8 +50,7 @@ public class UserRestTemplateClient implements UserClient {
 
             if (ex.getStatusCode().value() == 404) {
                 throw new UserNotFoundException(id);
-            }
-            else {
+            } else {
                 String responseBody = ex.getResponseBodyAsString();
                 throw new RuntimeException("An error occurred while fetching user with ID " + id + ": " + responseBody);
             }
@@ -68,10 +68,9 @@ public class UserRestTemplateClient implements UserClient {
             HttpEntity<User> userHttpEntity = new HttpEntity<>(entity);
             return restTemplate.postForObject(URL, userHttpEntity, User.class);
         } catch (HttpClientErrorException ex) {
-            if(ex.getStatusCode().value() == 409) {
+            if (ex.getStatusCode().value() == 409) {
                 log.error("Data integrity exception: {}", ex.getResponseBodyAsString());
-            }
-            else {
+            } else {
                 log.error("Error with creating new user, responseBody: " + ex.getResponseBodyAsString());
             }
             throw new RuntimeException("An error occurred while creating new user: " + ex.getResponseBodyAsString());
@@ -94,7 +93,8 @@ public class UserRestTemplateClient implements UserClient {
                 throw new UserNotFoundException(id);
             }
 
-            throw new RuntimeException("An error occurred while deleting user {ID " + id + "}, responseBody: " + ex.getResponseBodyAsString());
+            throw new RuntimeException(
+                    "An error occurred while deleting user {ID " + id + "}, responseBody: " + ex.getResponseBodyAsString());
         }
     }
 
@@ -103,16 +103,13 @@ public class UserRestTemplateClient implements UserClient {
         try {
             restTemplate.exchange("http://localhost:8080/status", HttpMethod.HEAD, null, String.class);
             return true;
-        }
-        catch (ResourceAccessException ex) {
+        } catch (ResourceAccessException ex) {
             log.warn("Server is not alive: " + ex.getMessage());
             return false;
-        }
-        catch (HttpStatusCodeException ex) {
+        } catch (HttpStatusCodeException ex) {
             log.warn("Server responded with error status: {} - {}", ex.getStatusCode(), ex.getStatusText());
             return false;
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             log.error("Unexpected error occurred while checking server status", ex);
             return false;
         }
