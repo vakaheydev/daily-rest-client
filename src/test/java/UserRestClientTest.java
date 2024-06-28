@@ -41,7 +41,7 @@ public class UserRestClientTest {
     void testGetAll() {
         List<User> users = client.getAll();
 
-        for(var user : users) {
+        for (var user : users) {
             log.info(user.getLogin());
         }
 

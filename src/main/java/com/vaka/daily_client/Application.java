@@ -8,11 +8,5 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
-
-//        UserRestClient client = ctx.getBean("userRestClient", UserRestClient.class);
-//        if(client.isServerAlive()) {
-//            User user = new User();
-//            client.create(user);
-//        }
     }
 }

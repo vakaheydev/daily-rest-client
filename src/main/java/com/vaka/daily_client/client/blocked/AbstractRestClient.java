@@ -26,6 +26,11 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
 
     private ObjectMapper objectMapper;
 
+    /**
+     * Retrieve all objects of type {@code T} from the REST API.
+     * @return a list of objects of type {@code T}
+     * @throws RuntimeException if there is an error during JSON processing
+     */
     @Override
     public List<T> getAll() {
         String response = getRestClient().get()
@@ -43,6 +48,11 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
         }
     }
 
+    /**
+     * Retrieve an object of type {@code T} by its ID from the REST API.
+     * @param id the ID of the object to retrieve
+     * @return the object of type {@code T} with the specified ID
+     */
     @Override
     public T getById(Integer id) {
         return getRestClient().get()
@@ -51,6 +61,11 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
                 .body(getDomainType());
     }
 
+    /**
+     * Retrieve an object of type {@code T} by its unique name from the REST API.
+     * @param uniqueName the unique name of the object to retrieve
+     * @return the object of type {@code T} with the specified unique name
+     */
     @Override
     public T getByUniqueName(String uniqueName) {
         return getRestClient().get()
@@ -59,6 +74,11 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
                 .body(getDomainType());
     }
 
+    /**
+     * Create an object of type {@code T} in the REST API and return it.
+     * @param entity the object to create
+     * @return the created object
+     */
     @Override
     public T create(T entity) {
         return getRestClient().post()
@@ -69,6 +89,12 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
                 .body(getDomainType());
     }
 
+    /**
+     * Update an object of type {@code T} with the specified ID in the REST API.
+     * @param id the id of the object to update
+     * @param entity the object to update
+     * @return the updated object with the specified ID
+     */
     @Override
     public T updateById(Integer id, T entity) {
         return getRestClient().put()
@@ -79,6 +105,10 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
                 .body(getDomainType());
     }
 
+    /**
+     * Delete an object by specified ID in the REST API.
+     * @param id the id of the object to delete
+     */
     @Override
     public void deleteById(Integer id) {
         getRestClient().delete()
@@ -87,6 +117,10 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
                 .toBodilessEntity();
     }
 
+    /**
+     * Check whether the server is alive by performing HEAD request to the REST API.
+     * @return true if the server is alive; false otherwise
+     */
     @Override
     public boolean isServerAlive() {
         try {

@@ -25,4 +25,19 @@ public class UserType {
         this.id = id;
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("UserType{");
+
+        sb.append(String.format("id=%d", id));
+        sb.append(String.format(", name=%s", name));
+        sb.append(", users=");
+
+        if (users != null) {
+            sb.append(users);
+        }
+
+        return sb.toString();
+    }
 }

@@ -66,28 +66,28 @@ public class User {
 
     @Override
     public String toString() {
-        if (userType == null) {
-            return "User{" +
-                    "id=" + id +
-                    ", login='" + login + '\'' +
-                    ", password='" + password + '\'' +
-                    ", firstName='" + firstName + '\'' +
-                    ", secondName='" + secondName + '\'' +
-                    ", patronymic='" + patronymic + '\'' +
-                    ", userType=" + "null" +
-                    ", schedules=" + schedules +
-                    '}';
+        StringBuilder sb = new StringBuilder("User{");
+
+        sb.append(String.format("id=%d", id));
+        sb.append(String.format(", login='%s'", login));
+        sb.append(String.format(", password='%s'", password));
+        sb.append(String.format(", firstName='%s'", firstName));
+        sb.append(String.format(", secondName='%s'", secondName));
+        sb.append(String.format(", patronymic='%s'", patronymic));
+        sb.append(", userType=");
+
+        if (userType != null) {
+            sb.append(String.format("'%s'", userType.getName()));
         }
 
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
-                ", userType=" + userType.getName() +
-                ", schedules=" + schedules +
-                '}';
+        sb.append(", schedules=");
+
+        if (schedules != null) {
+            sb.append(schedules);
+        }
+
+        sb.append("}");
+
+        return sb.toString();
     }
 }
