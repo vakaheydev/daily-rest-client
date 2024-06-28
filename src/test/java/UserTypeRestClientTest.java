@@ -1,4 +1,5 @@
 import com.vaka.daily_client.client.blocked.UserTypeRestClient;
+import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.UserTypeNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, UserTypeRestClient.class})
+@SpringBootTest(classes = {RestClientConfig.class, UserTypeRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserTypeRestClientTest {
@@ -39,6 +40,10 @@ public class UserTypeRestClientTest {
     @Test
     void testGetAll() {
         List<UserType> userTypes = client.getAll();
+
+        for (var userType : userTypes) {
+            log.info(userType.getName());
+        }
 
         log.info("User types list: {}", userTypes.toString());
 

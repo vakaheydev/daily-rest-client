@@ -1,4 +1,5 @@
 import com.vaka.daily_client.client.blocked.ScheduleRestClient;
+import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.ScheduleNotFoundException;
 import com.vaka.daily_client.model.Schedule;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, ScheduleRestClient.class})
+@SpringBootTest(classes = {RestClientConfig.class, ScheduleRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ScheduleRestClientTest {
@@ -39,6 +40,10 @@ public class ScheduleRestClientTest {
     @Test
     void testGetAll() {
         List<Schedule> schedules = client.getAll();
+
+        for(var schedule : schedules) {
+            log.info(schedule.getName());
+        }
 
         log.info("Schedule list: {}", schedules.toString());
 

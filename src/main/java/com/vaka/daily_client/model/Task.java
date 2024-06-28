@@ -43,13 +43,22 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", deadline=" + deadline +
-                ", status=" + status +
-                ", schedule=(" + schedule.getId() + "," + schedule.getName() +
-                ")}";
+        StringBuilder sb = new StringBuilder("Task {");
+
+        sb.append(String.format("id=%d", id));
+        sb.append(String.format(", name=%s", name));
+        sb.append(String.format(", description=%s", description));
+        sb.append(String.format(", deadline=%s", deadline));
+        sb.append(String.format(", status=%s", status));
+        sb.append(", schedule=");
+
+        if (schedule != null) {
+            sb.append(String.format("(%d, ", schedule.getId()));
+            sb.append(String.format("%s)", schedule.getName()));
+        }
+
+        sb.append("}");
+
+        return sb.toString();
     }
 }

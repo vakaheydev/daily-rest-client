@@ -34,11 +34,19 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Schedule{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", user=" + user.getLogin() +
-                ", tasks=" + tasks +
-                '}';
+        StringBuilder sb = new StringBuilder("Schedule {");
+
+        sb.append(String.format("id=%d", id));
+        sb.append(String.format(", name=%s", name));
+
+        sb.append(", user=");
+        if(user != null) {
+            sb.append(user.getLogin());
+        }
+
+        sb.append(String.format(", tasks=%s", tasks));
+        sb.append("}");
+
+        return sb.toString();
     }
 }

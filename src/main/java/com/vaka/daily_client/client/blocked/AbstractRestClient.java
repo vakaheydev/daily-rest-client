@@ -1,9 +1,13 @@
 package com.vaka.daily_client.client.blocked;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.vaka.daily_client.client.CommonClient;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClient;
@@ -20,13 +24,23 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
     @Value("${app.connection.url}")
     private String URL;
 
+    private ObjectMapper objectMapper;
+
     @Override
     public List<T> getAll() {
-        return getRestClient().get()
+        String response = getRestClient().get()
                 .uri(URL + getDomainUrl())
                 .retrieve()
-                .body(new ParameterizedTypeReference<>() {
-                });
+                .body(String.class);
+
+        try {
+            return objectMapper.readValue(response,
+                    TypeFactory.defaultInstance().constructCollectionType(List.class, getDomainType()));
+        } catch (JsonMappingException e) {
+            throw new RuntimeException(e);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -105,4 +119,9 @@ public abstract class AbstractRestClient<T> implements CommonClient<T> {
     public abstract String getNameOfUniqueName();
 
     public abstract Class<T> getDomainType();
+
+    @Autowired
+    public void setObjectMapper(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 }
