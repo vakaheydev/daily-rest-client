@@ -1,9 +1,9 @@
-import com.vaka.daily_client.client.blocked.ScheduleRestClient;
-import com.vaka.daily_client.config.JacksonConfig;
-import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.exception.ScheduleNotFoundException;
-import com.vaka.daily_client.model.Schedule;
-import com.vaka.daily_client.model.User;
+import com.vaka.dailyClient.client.blocked.ScheduleRestClient;
+import com.vaka.dailyClient.config.JacksonConfig;
+import com.vaka.dailyClient.config.RestClientConfig;
+import com.vaka.dailyClient.model.ScheduleNotFoundException;
+import com.vaka.dailyClient.model.Schedule;
+import com.vaka.dailyClient.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,7 +109,7 @@ public class ScheduleRestClientTest {
         assertNotNull(createdSchedule.getId());
         client.deleteById(createdSchedule.getId());
 
-        log.info("schedule with ID {} was deleted", createdSchedule.getId());
+        log.info("Schedule with ID {} was deleted", createdSchedule.getId());
 
         assertThrows(ScheduleNotFoundException.class, () -> client.getById(createdSchedule.getId()));
     }
