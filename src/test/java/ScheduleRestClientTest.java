@@ -1,9 +1,9 @@
-import com.vaka.dailyClient.client.blocked.ScheduleRestClient;
-import com.vaka.dailyClient.config.JacksonConfig;
-import com.vaka.dailyClient.config.RestClientConfig;
-import com.vaka.dailyClient.model.ScheduleNotFoundException;
-import com.vaka.dailyClient.model.Schedule;
-import com.vaka.dailyClient.model.User;
+import com.vaka.daily_client.client.blocked.ScheduleRestClient;
+import com.vaka.daily_client.config.JacksonConfig;
+import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.model.ScheduleNotFoundException;
+import com.vaka.daily_client.model.Schedule;
+import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
