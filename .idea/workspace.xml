@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserTypes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +188,8 @@
       <workItem from="1728244469538" duration="261000" />
       <workItem from="1728303674551" duration="2000" />
       <workItem from="1728308183012" duration="1973000" />
+      <workItem from="1728310578693" duration="49000" />
+      <workItem from="1728316722446" duration="125000" />
     </task>
     <servers />
   </component>
