@@ -47,9 +47,9 @@ public class TaskRestClientTest {
             log.info(task.getName());
         }
 
-        log.info("Task list: {}", taskList.toString());
+        log.info("Task list: {}", taskList);
 
-        assertEquals(5, taskList.size());
+        assertEquals(9, taskList.size());
     }
 
     @DisplayName("Should return task by ID")
@@ -87,6 +87,7 @@ public class TaskRestClientTest {
         createdTask = postedTask;
         log.info("Created task: {}", createdTask);
 
+        assertNotNull(postedTask.getSchedule());
         assertNotNull(postedTask);
     }
 
