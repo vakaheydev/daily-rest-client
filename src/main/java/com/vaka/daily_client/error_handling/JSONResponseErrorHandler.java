@@ -1,4 +1,4 @@
-package com.vaka.daily_client.errorHandling;
+package com.vaka.daily_client.error_handling;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,17 +1,18 @@
 package com.vaka.daily_client.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Schedule {
     private Integer id;
 
@@ -23,32 +24,24 @@ public class Schedule {
     @JsonIgnoreProperties({"schedules"})
     private User user;
 
-    @JsonManagedReference
-    private List<Task> tasks;
-
-    public Schedule() {
-    }
+    private List<Task> tasks = new ArrayList<>();
 
     public Schedule(String name, User user) {
         this.name = name;
         this.user = user;
     }
 
+    public void addTask(Task task) {
+        tasks.add(task);
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Schedule {");
-
-        sb.append(String.format("id=%d", id));
-        sb.append(String.format(", name=%s", name));
-
-        sb.append(", user=");
-        if(user != null) {
-            sb.append(user.getLogin());
-        }
-
-        sb.append(String.format(", tasks=%s", tasks));
-        sb.append("}");
-
-        return sb.toString();
+        return "Schedule{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", user=" + user +
+                ", tasks=" + tasks.size() +
+                '}';
     }
 }

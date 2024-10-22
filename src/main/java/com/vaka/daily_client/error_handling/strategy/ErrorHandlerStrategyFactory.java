@@ -1,9 +1,9 @@
-package com.vaka.daily_client.errorHandling.strategy;
+package com.vaka.daily_client.error_handling.strategy;
 
-import com.vaka.daily_client.errorHandling.strategy.notFound.ScheduleNotFoundHandlerStrategy;
-import com.vaka.daily_client.errorHandling.strategy.notFound.TaksNotFoundHandlerStrategy;
-import com.vaka.daily_client.errorHandling.strategy.notFound.UserNotFoundHandlerStrategy;
-import com.vaka.daily_client.errorHandling.strategy.notFound.UserTypeNotFoundHandlerStrategy;
+import com.vaka.daily_client.error_handling.strategy.notFound.ScheduleNotFoundHandlerStrategy;
+import com.vaka.daily_client.error_handling.strategy.notFound.TaksNotFoundHandlerStrategy;
+import com.vaka.daily_client.error_handling.strategy.notFound.UserNotFoundHandlerStrategy;
+import com.vaka.daily_client.error_handling.strategy.notFound.UserTypeNotFoundHandlerStrategy;
 import com.vaka.daily_client.model.DomainType;
 
 public class ErrorHandlerStrategyFactory {

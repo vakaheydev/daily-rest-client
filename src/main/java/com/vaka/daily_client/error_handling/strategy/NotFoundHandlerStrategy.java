@@ -1,4 +1,4 @@
-package com.vaka.daily_client.errorHandling.strategy;
+package com.vaka.daily_client.error_handling.strategy;
 
 import com.vaka.daily_client.model.ObjectNotFoundException;
 import com.vaka.daily_client.model.ResponseError;

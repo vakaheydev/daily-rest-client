@@ -1,7 +1,8 @@
 package com.vaka.daily_client.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vaka.daily_client.errorHandling.JSONResponseErrorHandler;
+import com.vaka.daily_client.error_handling.JSONResponseErrorHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestClient;
 @Configuration
 @PropertySource("classpath:application.properties")
 @Import(JacksonConfig.class)
+@Slf4j
 public class RestClientConfig {
     private final ObjectMapper objectMapper;
 
@@ -30,6 +32,11 @@ public class RestClientConfig {
                 .baseUrl(url)
                 .defaultHeader("Content-Type", "application/json")
                 .defaultStatusHandler(new JSONResponseErrorHandler(objectMapper))
+//                .requestInterceptor((request, body, execution) -> {
+//                    log.info("{} | {}", request.getMethod(), request.getURI());
+//                    log.info(new String(body));
+//                    return null;
+//                })
                 .build();
     }
 }

@@ -5,65 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/ScheduleClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/TaskClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserTypeClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/reactive/UserReactiveClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ErrorHandlerStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ErrorHandlerStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/HttpMessageNotReadableHandlerStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/IncorrectHttpRequestException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/ReactiveClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/ReactiveClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/AbstractRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/ScheduleClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/ScheduleRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/ScheduleRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/TaskClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/TaskRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/TaskRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserReactiveWebClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserReactiveWebClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserRestTemplateClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserRestTemplateClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserTypeClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/blocked/UserTypeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserTypeRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/client/reactive/UserReactiveClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/JacksonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/config/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestTemplateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/WebClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/DomainErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/DomainErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/JSONResponseErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/JSONResponseErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/DataIntegrityHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/DataIntegrityHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/ErrorHandlerStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/ErrorHandlerStrategyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/NoStrategyErrorHandlingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/NoStrategyErrorHandlingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/NotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/NotFoundHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/ValidationHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ValidationHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/notFound/TaksNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/TaksNotFoundHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/notFound/UserNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/UserNotFoundHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/errorHandling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/exception/ServerNotRespondException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ServerNotRespondException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/exception/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ValidationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/DomainType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/DomainType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/ObjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/ObjectNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/ResponseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/ResponseError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/ScheduleNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/ScheduleNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/TaskNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/TaskNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserTypeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserTypeNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/UserTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/model/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/dailyClient/serialization/ResponseErrorDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/serialization/ResponseErrorDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/DomainErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/DomainErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/JSONResponseErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/JSONResponseErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/DataIntegrityHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/DataIntegrityHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ErrorHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/ErrorHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ErrorHandlerStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/ErrorHandlerStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/NoStrategyErrorHandlingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/NoStrategyErrorHandlingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/NotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/NotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/ValidationHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/ValidationHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/TaksNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaksNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/UserNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/errorHandling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/UserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +41,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -103,7 +72,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature-task-schedule-problem&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Vaka/Documents/vaka-daily-client&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -159,6 +128,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TaskRestClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TaskRestClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskRestClientTest.testPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TaskRestClientTest" />
+      <option name="METHOD_NAME" value="testPost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskRestClientTest.testPost2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TaskRestClientTest" />
+      <option name="METHOD_NAME" value="testPost2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Maven Test" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -199,9 +197,19 @@
     <list>
       <item itemvalue="Application.Client Daily" />
       <item itemvalue="JUnit.All Tests" />
+      <item itemvalue="JUnit.TaskRestClientTest" />
+      <item itemvalue="JUnit.TaskRestClientTest.testPost" />
+      <item itemvalue="JUnit.TaskRestClientTest.testPost2" />
       <item itemvalue="Maven.Maven Test" />
       <item itemvalue="Spring Boot.Application" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TaskRestClientTest" />
+        <item itemvalue="JUnit.TaskRestClientTest.testPost" />
+        <item itemvalue="JUnit.TaskRestClientTest.testPost2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -251,6 +259,9 @@
       <workItem from="1728562867008" duration="184000" />
       <workItem from="1728563963801" duration="830000" />
       <workItem from="1728565930903" duration="2764000" />
+      <workItem from="1729535297243" duration="3030000" />
+      <workItem from="1729597348982" duration="4333000" />
+      <workItem from="1729631807461" duration="4965000" />
     </task>
     <servers />
   </component>
@@ -264,6 +275,150 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/ResponseError.java</url>
           <line>31</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>42</line>
+          <properties class="ScheduleRestClientTest" method="testGetAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>56</line>
+          <properties class="ScheduleRestClientTest" method="testGetById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>68</line>
+          <properties class="ScheduleRestClientTest" method="testGetByWrongId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>81</line>
+          <properties class="ScheduleRestClientTest" method="testPost2">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>74</line>
+          <properties class="ScheduleRestClientTest" method="testGetByWrongName">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>94</line>
+          <properties class="ScheduleRestClientTest" method="testPut">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>121</line>
+          <properties class="ScheduleRestClientTest" method="testDelete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
+          <line>34</line>
+          <properties class="ScheduleRestClientTest" method="testServerIsAlive">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>107</line>
+          <properties class="TaskRestClientTest" method="testPut">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>122</line>
+          <properties class="TaskRestClientTest" method="testDelete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>89</line>
+          <properties class="TaskRestClientTest" method="testPost">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>76</line>
+          <properties class="TaskRestClientTest" method="testGetByWrongId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>82</line>
+          <properties class="TaskRestClientTest" method="testGetByWrongName">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>64</line>
+          <properties class="TaskRestClientTest" method="testGetById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>50</line>
+          <properties class="TaskRestClientTest" method="testGetAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>42</line>
+          <properties class="TaskRestClientTest" method="testServerIsAlive">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

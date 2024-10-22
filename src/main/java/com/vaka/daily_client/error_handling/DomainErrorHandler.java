@@ -1,6 +1,6 @@
-package com.vaka.daily_client.errorHandling;
+package com.vaka.daily_client.error_handling;
 
-import com.vaka.daily_client.errorHandling.strategy.*;
+import com.vaka.daily_client.error_handling.strategy.*;
 import com.vaka.daily_client.model.DomainType;
 import com.vaka.daily_client.model.ResponseError;
 
@@ -28,6 +28,8 @@ public class DomainErrorHandler {
                 return new DataIntegrityHandlerStrategy();
             case "ValidationException":
                 return new ValidationHandlerStrategy();
+            case "HttpMessageNotReadableException":
+                return new HttpMessageNotReadableHandlerStrategy();
         }
 
         throw new NoStrategyErrorHandlingException(errorType);

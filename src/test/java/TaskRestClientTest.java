@@ -1,10 +1,12 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vaka.daily_client.client.blocked.ScheduleRestClient;
 import com.vaka.daily_client.client.blocked.TaskRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.model.TaskNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
-import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +17,31 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, TaskRestClient.class, JacksonConfig.class})
+@SpringBootTest(classes = {RestClientConfig.class, TaskRestClient.class, ScheduleRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TaskRestClientTest {
     @Autowired
-    TaskRestClient client;
+    ObjectMapper mapper;
+
+    @Autowired
+    TaskRestClient taskClient;
+
+    @Autowired
+    ScheduleRestClient scheduleClient;
 
     private static Task createdTask;
 
     @BeforeEach
     void setup() {
-        client.isServerAlive();
+        taskClient.isServerAlive();
     }
 
     @DisplayName("Server should be alive")
     @Order(0)
     @Test
     void testServerIsAlive() {
-        assertTrue(client.isServerAlive());
+        assertTrue(taskClient.isServerAlive());
     }
 
 
@@ -41,21 +49,21 @@ public class TaskRestClientTest {
     @Order(1)
     @Test
     void testGetAll() {
-        List<Task> taskList = client.getAll();
+        List<Task> taskList = taskClient.getAll();
 
         for(var task : taskList) {
             log.info(task.getName());
         }
 
         log.info("Task list: {}", taskList);
-
-        assertEquals(9, taskList.size());
+        assertEquals("Прочитать книгу", taskList.get(0).getName());
+        assertEquals("Разработать REST API", taskList.get(1).getName());
     }
 
     @DisplayName("Should return task by ID")
     @Test
     void testGetById() {
-        Task task = client.getById(1);
+        Task task = taskClient.getById(1);
 
         assertNotNull(task);
 
@@ -67,28 +75,31 @@ public class TaskRestClientTest {
     @DisplayName("Should throw TaskNotFound (id)")
     @Test
     void testGetByWrongId() {
-        assertThrows(TaskNotFoundException.class, () -> client.getById(125));
+        assertThrows(TaskNotFoundException.class, () -> taskClient.getById(125));
     }
 
     @DisplayName("Should throw IllegalStateException (name)")
     @Test
     void testGetByWrongName() {
-        assertThrows(IllegalStateException.class, () -> client.getByUniqueName("abc"));
+        assertThrows(IllegalStateException.class, () -> taskClient.getByUniqueName("abc"));
     }
 
     @DisplayName("Should create new task")
     @Test
     @Order(2)
-    void testPost2() {
-        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, new Schedule("main",
-                new User()));
+    void testPost() throws JsonProcessingException {
+        Schedule schedule = scheduleClient.getById(2);
+        log.info("Schedule before task created: {}", schedule);
 
-        Task postedTask = client.create(task);
+        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, 2);
+        log.info("Task to JSON: {}", mapper.writeValueAsString(task));
+        Task postedTask = taskClient.create(task);
         createdTask = postedTask;
-        log.info("Created task: {}", createdTask);
+        log.info("Created task: {}", postedTask);
 
-        assertNotNull(postedTask.getSchedule());
-        assertNotNull(postedTask);
+        schedule = scheduleClient.getById(2);
+
+        log.info("Schedule after task created: {}", schedule);
     }
 
     @DisplayName("Should update task by ID")
@@ -99,7 +110,7 @@ public class TaskRestClientTest {
         String newName = "updated_task";
         createdTask.setName(newName);
 
-        Task updatedSchedule = client.updateById(createdTask.getId(), createdTask);
+        Task updatedSchedule = taskClient.updateById(createdTask.getId(), createdTask);
         log.info("Updated task: {}", updatedSchedule);
 
         assertEquals(newName, updatedSchedule.getName());
@@ -110,11 +121,12 @@ public class TaskRestClientTest {
     @Test
     @Order(4)
     void testDelete() {
+        assertNotNull(createdTask);
         assertNotNull(createdTask.getId());
-        client.deleteById(createdTask.getId());
+        taskClient.deleteById(createdTask.getId());
 
         log.info("Task with ID {} was deleted", createdTask.getId());
 
-        assertThrows(TaskNotFoundException.class, () -> client.getById(createdTask.getId()));
+        assertThrows(TaskNotFoundException.class, () -> taskClient.getById(createdTask.getId()));
     }
 }

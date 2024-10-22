@@ -3,12 +3,14 @@ import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.model.ScheduleNotFoundException;
 import com.vaka.daily_client.model.Schedule;
+import com.vaka.daily_client.model.Task;
 import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -92,14 +94,26 @@ public class ScheduleRestClientTest {
     @Order(3)
     void testPut() {
         assertNotNull(createdSchedule);
+
+        log.info("Before update schedule: {}", createdSchedule);
+
         String newName = "updated_schedule";
         createdSchedule.setName(newName);
+        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, createdSchedule.getId());
+        createdSchedule.getTasks().add(task);
+
 
         Schedule updatedSchedule = client.updateById(createdSchedule.getId(), createdSchedule);
-        log.info("Updated schedule: {}", updatedSchedule);
+        log.info("After update schedule: {}", updatedSchedule);
 
         assertEquals(newName, updatedSchedule.getName());
         assertEquals(createdSchedule.getId(), updatedSchedule.getId());
+
+        Schedule scheduleById = client.getById(createdSchedule.getId());
+
+        assertNotNull(scheduleById.getTasks());
+        assertEquals(1, scheduleById.getTasks().size());
+        assertEquals("new_task", scheduleById.getTasks().get(0).getName());
     }
 
     @DisplayName("Should delete schedule by id")

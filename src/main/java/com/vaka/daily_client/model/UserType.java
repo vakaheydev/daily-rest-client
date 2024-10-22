@@ -3,11 +3,17 @@ package com.vaka.daily_client.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserType {
     private Integer id;
 
@@ -18,26 +24,8 @@ public class UserType {
     @JsonIgnore
     private List<User> users;
 
-    public UserType() {
-    }
-
     public UserType(Integer id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("UserType{");
-
-        sb.append(String.format("id=%d", id));
-        sb.append(String.format(", name=%s", name));
-        sb.append(", users=");
-
-        if (users != null) {
-            sb.append(users);
-        }
-
-        return sb.toString();
     }
 }
