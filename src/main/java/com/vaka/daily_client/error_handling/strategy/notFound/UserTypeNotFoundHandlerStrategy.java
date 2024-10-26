@@ -1,8 +1,8 @@
 package com.vaka.daily_client.error_handling.strategy.notFound;
 
 import com.vaka.daily_client.error_handling.strategy.NotFoundHandlerStrategy;
-import com.vaka.daily_client.model.ObjectNotFoundException;
-import com.vaka.daily_client.model.UserTypeNotFoundException;
+import com.vaka.daily_client.exception.ObjectNotFoundException;
+import com.vaka.daily_client.exception.UserTypeNotFoundException;
 
 public class UserTypeNotFoundHandlerStrategy extends NotFoundHandlerStrategy {
     @Override

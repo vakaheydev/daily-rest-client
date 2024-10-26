@@ -1,6 +1,6 @@
 package com.vaka.daily_client.error_handling.strategy;
 
-import com.vaka.daily_client.model.ObjectNotFoundException;
+import com.vaka.daily_client.exception.ObjectNotFoundException;
 import com.vaka.daily_client.model.ResponseError;
 
 public abstract class NotFoundHandlerStrategy implements ErrorHandlerStrategy {

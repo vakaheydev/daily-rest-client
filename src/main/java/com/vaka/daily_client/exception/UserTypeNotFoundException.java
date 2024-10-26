@@ -1,4 +1,4 @@
-package com.vaka.daily_client.model;
+package com.vaka.daily_client.exception;
 
 public class UserTypeNotFoundException extends ObjectNotFoundException {
     public static final String OBJECT_NAME = "User Type";

@@ -1,4 +1,4 @@
-package com.vaka.daily_client.model;
+package com.vaka.daily_client.exception;
 
 import lombok.Getter;
 

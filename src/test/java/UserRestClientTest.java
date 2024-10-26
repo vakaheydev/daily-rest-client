@@ -1,7 +1,7 @@
 import com.vaka.daily_client.client.blocked.UserRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.model.UserNotFoundException;
+import com.vaka.daily_client.exception.UserNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;

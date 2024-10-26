@@ -1,4 +1,4 @@
-package com.vaka.daily_client.model;
+package com.vaka.daily_client.exception;
 
 public class ScheduleNotFoundException extends ObjectNotFoundException {
     public static final String OBJECT_NAME = "Schedule";
