@@ -22,12 +22,13 @@ import java.util.List;
 @Slf4j
 public abstract class AbstractRestClient<T> implements Client<T> {
     @Value("${app.connection.url}")
-    private String URL;
+    protected String URL;
 
-    private ObjectMapper objectMapper;
+    protected ObjectMapper objectMapper;
 
     /**
      * Retrieve all objects of type {@code T} from the REST API.
+     *
      * @return a list of objects of type {@code T}
      * @throws RuntimeException if there is an error during JSON processing
      */
@@ -50,6 +51,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Retrieve an object of type {@code T} by its ID from the REST API.
+     *
      * @param id the ID of the object to retrieve
      * @return the object of type {@code T} with the specified ID
      */
@@ -63,6 +65,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Retrieve an object of type {@code T} by its unique name from the REST API.
+     *
      * @param uniqueName the unique name of the object to retrieve
      * @return the object of type {@code T} with the specified unique name
      */
@@ -76,6 +79,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Create an object of type {@code T} in the REST API and return it.
+     *
      * @param entity the object to create
      * @return the created object
      */
@@ -91,7 +95,8 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Update an object of type {@code T} with the specified ID in the REST API.
-     * @param id the id of the object to update
+     *
+     * @param id     the id of the object to update
      * @param entity the object to update
      * @return the updated object with the specified ID
      */
@@ -107,6 +112,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Delete an object by specified ID in the REST API.
+     *
      * @param id the id of the object to delete
      */
     @Override
@@ -119,6 +125,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     /**
      * Check whether the server is alive by performing HEAD request to the REST API.
+     *
      * @return true if the server is alive; false otherwise
      */
     @Override

@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 
 public class ResponseErrorDeserializer extends StdDeserializer<ResponseError> {
     private static final Pattern pattern = Pattern.compile(".*[iI][dD].*");
+
     public ResponseErrorDeserializer() {
         super(ResponseError.class);
     }

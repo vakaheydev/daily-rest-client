@@ -1,6 +1,5 @@
 package com.vaka.daily_client.client.reactive;
 
-import com.vaka.daily_client.client.reactive.UserReactiveClient;
 import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
