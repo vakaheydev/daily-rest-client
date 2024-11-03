@@ -1,4 +1,4 @@
-package com.vaka.daily_client.client.blocked;
+package com.vaka.daily_client.client.reactive;
 
 import com.vaka.daily_client.client.reactive.UserReactiveClient;
 import com.vaka.daily_client.model.User;

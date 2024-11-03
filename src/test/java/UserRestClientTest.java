@@ -62,6 +62,34 @@ public class UserRestClientTest {
         assertEquals("vaka", user.getLogin());
     }
 
+    @DisplayName("Should return user by user type name (developer)")
+    @Test
+    void testGetByUserTypeName() {
+        List<User> users = client.getByUserTypeName("developer");
+
+        assertNotNull(users);
+
+        log.info("Users with user type developer: {}", users);
+
+        assertEquals(1, users.size());
+        assertEquals("vaka", users.get(0).getLogin());
+        assertEquals("developer", users.get(0).getUserType().getName());
+    }
+
+    @DisplayName("Should return user by user type name (user)")
+    @Test
+    void testGetByUserTypeName2() {
+        List<User> users = client.getByUserTypeName("user");
+
+        assertNotNull(users);
+
+        log.info("Users with user type user: {}", users);
+
+        assertEquals(2, users.size());
+        assertEquals("aka", users.get(0).getLogin());
+        assertEquals("user", users.get(0).getUserType().getName());
+    }
+
     @DisplayName("Should return user by login")
     @Test
     void testGetByLogin() {
