@@ -22,10 +22,10 @@ public class UserTypeRestClientTest {
 
     private static UserType createdUserType;
 
-    @BeforeEach
-    void setup() {
-        client.isServerAlive();
-    }
+//    @BeforeEach
+//    void setup() {
+//        client.isServerAlive();
+//    }
 
     @DisplayName("Server should be alive")
     @Order(0)

@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
+import java.util.Objects;
+
 @Component
 public class ScheduleRestClient extends AbstractRestClient<Schedule> implements ScheduleClient {
     RestClient client;
@@ -12,6 +14,12 @@ public class ScheduleRestClient extends AbstractRestClient<Schedule> implements 
     @Autowired
     public ScheduleRestClient(RestClient client) {
         this.client = client;
+    }
+
+    @Override
+    public Schedule create(Schedule entity) {
+        Objects.requireNonNull(entity.getUser());
+        return super.create(entity);
     }
 
     @Override

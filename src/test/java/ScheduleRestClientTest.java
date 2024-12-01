@@ -80,13 +80,14 @@ public class ScheduleRestClientTest {
     @Test
     @Order(2)
     void testPost2() {
-        Schedule schedule = new Schedule("new_schedule", new User());
-
+        User user = new User(1);
+        Schedule schedule = new Schedule("new_schedule", user);
         Schedule postedSchedule = client.create(schedule);
         createdSchedule = postedSchedule;
         log.info("Created schedule: {}", createdSchedule);
 
         assertNotNull(postedSchedule);
+        assertEquals("vaka", postedSchedule.getUser().getLogin());
     }
 
     @DisplayName("Should update schedule by ID")
@@ -100,7 +101,7 @@ public class ScheduleRestClientTest {
         String newName = "updated_schedule";
         createdSchedule.setName(newName);
         Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, createdSchedule.getId());
-        createdSchedule.getTasks().add(task);
+        createdSchedule.addTask(task);
 
 
         Schedule updatedSchedule = client.updateById(createdSchedule.getId(), createdSchedule);

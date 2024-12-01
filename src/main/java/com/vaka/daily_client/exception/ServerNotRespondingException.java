@@ -1,9 +1,9 @@
 package com.vaka.daily_client.exception;
 
-public class ServerNotRespondException extends RuntimeException {
+public class ServerNotRespondingException extends RuntimeException {
     private static final String DEFAULT_MESSAGE = "Server doesn't responding!";
 
-    public ServerNotRespondException() {
+    public ServerNotRespondingException() {
         super(DEFAULT_MESSAGE);
     }
 

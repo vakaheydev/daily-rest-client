@@ -32,11 +32,6 @@ public class RestClientConfig {
                 .baseUrl(url)
                 .defaultHeader("Content-Type", "application/json")
                 .defaultStatusHandler(new JSONResponseErrorHandler(objectMapper))
-//                .requestInterceptor((request, body, execution) -> {
-//                    log.info("{} | {}", request.getMethod(), request.getURI());
-//                    log.info(new String(body));
-//                    return null;
-//                })
                 .build();
     }
 }

@@ -39,11 +39,24 @@ public class User {
 
     private UserType userType;
 
-    @JsonManagedReference
+    @JsonIgnoreProperties({"user"})
     private List<Schedule> schedules = new ArrayList<>();
+
+    private Long tgId;
 
     public User(Integer id) {
         this.id = id;
+    }
+
+    public User(Integer id, String login, String password, String firstName, String secondName, String patronymic,
+                Long tgId) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.patronymic = patronymic;
+        this.tgId = tgId;
     }
 
     public User(String login, String password, String firstName, String secondName, String patronymic) {
@@ -67,7 +80,8 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", userType=" + userType.getName() +
+                ", userType=" + (userType == null ? "undefined" : userType.getName()) +
+                ", tgId(optional)=" + tgId +
                 ", schedules=" + schedules.size() +
                 '}';
     }

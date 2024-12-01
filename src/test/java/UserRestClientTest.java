@@ -4,6 +4,7 @@ import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.UserNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.User;
+import com.vaka.daily_client.model.UserTypes;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,9 @@ public class UserRestClientTest {
             log.info(user.getLogin());
         }
 
-        log.info("Users list: {}", users.toString());
+        log.info("Users list: {}", users);
+
+        assertDoesNotThrow(() -> users.get(0).toString());
 
         assertEquals(3, users.size());
     }
@@ -88,6 +91,21 @@ public class UserRestClientTest {
         assertEquals(2, users.size());
         assertEquals("aka", users.get(0).getLogin());
         assertEquals("user", users.get(0).getUserType().getName());
+    }
+
+    @DisplayName("Should return user by telegram id")
+    @Test
+    void testGetUserByTgId() {
+        long tgId = 1531192384;
+        User user = client.getByTgId(tgId);
+
+        assertNotNull(user);
+
+        log.info("User with specified tg id: {}", user);
+
+        assertEquals("vaka", user.getLogin());
+        assertEquals(UserTypes.DEVELOPER.getType(), user.getUserType());
+        assertEquals(tgId, user.getTgId());
     }
 
     @DisplayName("Should return user by login")

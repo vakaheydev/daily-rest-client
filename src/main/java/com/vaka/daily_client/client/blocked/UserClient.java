@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface UserClient extends Client<User> {
     List<User> getByUserTypeName(String userTypeName);
+    User getByTgId(Long tgId);
 }

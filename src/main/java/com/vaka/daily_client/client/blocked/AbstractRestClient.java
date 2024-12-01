@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.vaka.daily_client.aop.RestCall;
 import com.vaka.daily_client.client.Client;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @return a list of objects of type {@code T}
      * @throws RuntimeException if there is an error during JSON processing
      */
+    @RestCall
     @Override
     public List<T> getAll() {
         String response = getRestClient().get()
@@ -55,6 +57,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param id the ID of the object to retrieve
      * @return the object of type {@code T} with the specified ID
      */
+    @RestCall
     @Override
     public T getById(Integer id) {
         return getRestClient().get()
@@ -69,6 +72,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param uniqueName the unique name of the object to retrieve
      * @return the object of type {@code T} with the specified unique name
      */
+    @RestCall
     @Override
     public T getByUniqueName(String uniqueName) {
         return getRestClient().get()
@@ -83,6 +87,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param entity the object to create
      * @return the created object
      */
+    @RestCall
     @Override
     public T create(T entity) {
         return getRestClient().post()
@@ -100,6 +105,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param entity the object to update
      * @return the updated object with the specified ID
      */
+    @RestCall
     @Override
     public T updateById(Integer id, T entity) {
         return getRestClient().put()
@@ -115,6 +121,7 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      *
      * @param id the id of the object to delete
      */
+    @RestCall
     @Override
     public void deleteById(Integer id) {
         getRestClient().delete()

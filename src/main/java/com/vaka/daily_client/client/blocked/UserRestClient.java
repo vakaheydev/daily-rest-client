@@ -27,6 +27,10 @@ public class UserRestClient extends AbstractRestClient<User> implements UserClie
                 .body(String.class);
 
 
+        return createListFromResponse(response);
+    }
+
+    private List<User> createListFromResponse(String response) {
         try {
             return this.objectMapper.readValue(response,
                     TypeFactory.defaultInstance().constructCollectionType(List.class, getDomainType()));
@@ -35,6 +39,14 @@ public class UserRestClient extends AbstractRestClient<User> implements UserClie
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public User getByTgId(Long tgId) {
+        return restClient.get()
+                .uri(URL + getDomainUrl() + "/search?tgId=" + tgId)
+                .retrieve()
+                .body(getDomainType());
     }
 
     @Override
