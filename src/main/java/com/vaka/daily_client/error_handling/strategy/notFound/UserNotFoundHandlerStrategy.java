@@ -1,22 +1,27 @@
 package com.vaka.daily_client.error_handling.strategy.notFound;
 
 import com.vaka.daily_client.error_handling.strategy.NotFoundHandlerStrategy;
-import com.vaka.daily_client.exception.ObjectNotFoundException;
 import com.vaka.daily_client.exception.UserNotFoundException;
+import com.vaka.daily_client.model.ResponseError.ResponseDetails;
 
 public class UserNotFoundHandlerStrategy extends NotFoundHandlerStrategy {
     @Override
-    public ObjectNotFoundException getNotFoundException(Integer id, String name) {
-        return new UserNotFoundException(id, name);
-    }
+    public void throwNotFoundException(ResponseDetails responseDetails) {
+        if (responseDetails.contains("requestedTgId")) {
+            Long tgId = getLongValueFromResponse(responseDetails, "requestedTgId");
+            throw new UserNotFoundException(tgId);
+        }
 
-    @Override
-    public ObjectNotFoundException getNotFoundByIdException(Integer id) {
-        return new UserNotFoundException(id);
-    }
-
-    @Override
-    public ObjectNotFoundException getNotFoundByNameException(String name) {
-        return new UserNotFoundException(name);
+        if (responseDetails.contains("requestedId") && responseDetails.contains("requestedName")) {
+            Integer id = getIntValueFromResponse(responseDetails, "requestedId");
+            String name = getStringValueFromResponse(responseDetails, "requestedName");
+            throw new UserNotFoundException(id, name);
+        } else if (responseDetails.contains("requestedId")) {
+            Integer id = getIntValueFromResponse(responseDetails, "requestedId");
+            throw new UserNotFoundException(id);
+        } else if (responseDetails.contains("requestedName")) {
+            String name = getStringValueFromResponse(responseDetails, "requestedName");
+            throw new UserNotFoundException(name);
+        }
     }
 }

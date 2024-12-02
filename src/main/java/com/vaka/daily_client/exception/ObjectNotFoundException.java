@@ -2,52 +2,57 @@ package com.vaka.daily_client.exception;
 
 import lombok.Getter;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
-/**
- * Common exception if object not found by ID, unique name or both
- */
-@Getter
 public class ObjectNotFoundException extends RuntimeException {
-    public enum ObjectNotFoundType {
-        BY_NAME, BY_ID, BY_BOTH;
-    }
+    private final Map<String, String> details = new HashMap<>();
+    @Getter
+    protected final String objectName;
 
-    ObjectNotFoundType notFoundType;
-    private String objectName;
-    private Integer id;
-    private String name;
+    public ObjectNotFoundException(String message) {
+        super(message);
+        this.objectName = "UNDEFINED";
+    }
 
     public ObjectNotFoundException(String objectName, Integer id, String name) {
         super(String.format("%s with ID {%d} and unique name (%s) not found", objectName, id, name));
-        this.notFoundType = ObjectNotFoundType.BY_BOTH;
-        this.id = id;
-        this.name = name;
+        details.put("id", String.valueOf(id));
+        details.put("name", name);
         this.objectName = objectName;
     }
 
     public ObjectNotFoundException(String objectName, Integer id) {
         super(String.format("%s with ID {%d} not found", objectName, id));
-        this.notFoundType = ObjectNotFoundType.BY_ID;
-        this.id = id;
+        details.put("id", String.valueOf(id));
         this.objectName = objectName;
     }
 
     public ObjectNotFoundException(String objectName, String name) {
         super(String.format("%s with unique name {%s} not found", objectName, name));
-        this.notFoundType = ObjectNotFoundType.BY_NAME;
-        this.name = name;
+        details.put("name", name);
         this.objectName = objectName;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void putDetail(String detailName, String detailValue) {
+        details.put(detailName, detailValue);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Optional<String> getDetail(String detailName) {
+        return Optional.ofNullable(details.get(detailName));
     }
 
-    public void setObjectName(String objectName) {
-        this.objectName = objectName;
+    public Set<Map.Entry<String, String>> getDetails() {
+        return Set.copyOf(details.entrySet());
+    }
+
+    public Integer getId() {
+        return Integer.valueOf(getDetail("id").orElseThrow());
+    }
+
+    public String getName() {
+        return getDetail("name").orElseThrow();
     }
 }

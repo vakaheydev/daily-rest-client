@@ -7,8 +7,18 @@
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/UserRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/JacksonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/NotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/NotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaksNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaksNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ObjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ObjectNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/serialization/ResponseErrorDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/ResponseErrorDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,16 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleRestClientTest.testGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="vaka-daily-client" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ScheduleRestClientTest" />
-      <option name="METHOD_NAME" value="testGetAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ScheduleRestClientTest.testPost2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vaka-daily-client" />
       <option name="PACKAGE_NAME" value="" />
@@ -155,6 +155,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserRestClientTest" />
       <option name="METHOD_NAME" value="testGetAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestClientTest.testGetByWrongTgId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserRestClientTest" />
+      <option name="METHOD_NAME" value="testGetByWrongTgId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,8 +217,8 @@
       <item itemvalue="Application.Client Daily" />
       <item itemvalue="JAR Application.REST API" />
       <item itemvalue="JUnit.All Tests" />
+      <item itemvalue="JUnit.UserRestClientTest.testGetByWrongTgId" />
       <item itemvalue="JUnit.ScheduleRestClientTest" />
-      <item itemvalue="JUnit.ScheduleRestClientTest.testGetAll" />
       <item itemvalue="JUnit.ScheduleRestClientTest.testPost2" />
       <item itemvalue="JUnit.ScheduleRestClientTest.testPut" />
       <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
@@ -217,11 +227,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRestClientTest.testGetByWrongTgId" />
         <item itemvalue="JUnit.ScheduleRestClientTest" />
         <item itemvalue="JUnit.ScheduleRestClientTest.testPut" />
         <item itemvalue="JUnit.ScheduleRestClientTest.testPost2" />
         <item itemvalue="JUnit.UserRestClientTest.testGetAll" />
-        <item itemvalue="JUnit.ScheduleRestClientTest.testGetAll" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +298,9 @@
       <workItem from="1733062484119" duration="2083000" />
       <workItem from="1733065915052" duration="22000" />
       <workItem from="1733066885034" duration="147000" />
-      <workItem from="1733151742442" duration="343000" />
+      <workItem from="1733151742442" duration="3157000" />
+      <workItem from="1733156502997" duration="13000" />
+      <workItem from="1733156630818" duration="330000" />
     </task>
     <servers />
   </component>
@@ -302,6 +314,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/ResponseError.java</url>
           <line>31</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/ResponseErrorDeserializer.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
@@ -324,7 +341,7 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
           <line>95</line>
-          <properties class="ScheduleRestClientTest">
+          <properties class="ScheduleRestClientTest" method="testPut">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -333,7 +350,7 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java</url>
           <line>122</line>
-          <properties class="ScheduleRestClientTest">
+          <properties class="ScheduleRestClientTest" method="testDelete">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -430,51 +447,6 @@
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>61</line>
-          <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>76</line>
-          <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>109</line>
-          <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>125</line>
-          <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>37</line>
-          <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/aop/RestCallExceptionHandlerAspect.java</url>
           <line>15</line>
           <properties class="com.vaka.daily_client.aop.RestCallExceptionHandlerAspect" method="handleResourceAccessException">
@@ -502,9 +474,9 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/serialization/ResponseErrorDeserializer.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/ResponseErrorDeserializer.java</url>
           <line>23</line>
-          <properties class="com.vaka.daily_client.serialization.ResponseErrorDeserializer" method="deserialize">
+          <properties class="com.vaka.daily_client.model.serialization.ResponseErrorDeserializer" method="deserialize">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
