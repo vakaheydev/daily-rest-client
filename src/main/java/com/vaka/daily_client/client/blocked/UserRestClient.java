@@ -42,7 +42,7 @@ public class UserRestClient extends AbstractRestClient<User> implements UserClie
     }
 
     @Override
-    public User getByTgId(Long tgId) {
+    public User getByTelegramId(Long tgId) {
         return restClient.get()
                 .uri(URL + getDomainUrl() + "/search?tgId=" + tgId)
                 .retrieve()

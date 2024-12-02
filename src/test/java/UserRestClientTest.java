@@ -97,7 +97,7 @@ public class UserRestClientTest {
     @Test
     void testGetUserByTgId() {
         long tgId = 1531192384;
-        User user = client.getByTgId(tgId);
+        User user = client.getByTelegramId(tgId);
 
         assertNotNull(user);
 
@@ -131,6 +131,12 @@ public class UserRestClientTest {
     @Test
     void testGetByWrongName() {
         assertThrows(UserNotFoundException.class, () -> client.getByUniqueName("abc"));
+    }
+
+    @DisplayName("Should throw UserNotFound (telegram id)")
+    @Test
+    void testGetByWrongTgId() {
+        assertThrows(UserNotFoundException.class, () -> client.getByTelegramId(-1L));
     }
 
     @DisplayName("Should throw Validation (duplicate login)")
