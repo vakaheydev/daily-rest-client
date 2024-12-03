@@ -1,11 +1,10 @@
 package com.vaka.daily_client.client.blocked;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.vaka.daily_client.aop.RestCall;
 import com.vaka.daily_client.client.Client;
+import com.vaka.daily_client.exception.ServerNotRespondingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,19 +32,22 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @return a list of objects of type {@code T}
      * @throws RuntimeException if there is an error during JSON processing
      */
-    @RestCall
+
     @Override
     public List<T> getAll() {
-        String response = getRestClient().get()
-                .uri(URL + getDomainUrl())
-                .retrieve()
-                .body(String.class);
+        String response;
+        try {
+            response = getRestClient().get()
+                    .uri(URL + getDomainUrl())
+                    .retrieve()
+                    .body(String.class);
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
 
         try {
             return objectMapper.readValue(response,
                     TypeFactory.defaultInstance().constructCollectionType(List.class, getDomainType()));
-        } catch (JsonMappingException e) {
-            throw new RuntimeException(e);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -57,13 +59,17 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param id the ID of the object to retrieve
      * @return the object of type {@code T} with the specified ID
      */
-    @RestCall
+
     @Override
     public T getById(Integer id) {
-        return getRestClient().get()
-                .uri(URL + getDomainUrl() + "/{id}", id)
-                .retrieve()
-                .body(getDomainType());
+        try {
+            return getRestClient().get()
+                    .uri(URL + getDomainUrl() + "/{id}", id)
+                    .retrieve()
+                    .body(getDomainType());
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
     }
 
     /**
@@ -72,13 +78,17 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param uniqueName the unique name of the object to retrieve
      * @return the object of type {@code T} with the specified unique name
      */
-    @RestCall
+
     @Override
     public T getByUniqueName(String uniqueName) {
-        return getRestClient().get()
-                .uri(URL + getDomainUrl() + "/search?" + getNameOfUniqueName() + "={name}", uniqueName)
-                .retrieve()
-                .body(getDomainType());
+        try {
+            return getRestClient().get()
+                    .uri(URL + getDomainUrl() + "/search?" + getNameOfUniqueName() + "={name}", uniqueName)
+                    .retrieve()
+                    .body(getDomainType());
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
     }
 
     /**
@@ -87,15 +97,19 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param entity the object to create
      * @return the created object
      */
-    @RestCall
+
     @Override
     public T create(T entity) {
-        return getRestClient().post()
-                .uri(URL + getDomainUrl())
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(entity)
-                .retrieve()
-                .body(getDomainType());
+        try {
+            return getRestClient().post()
+                    .uri(URL + getDomainUrl())
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(entity)
+                    .retrieve()
+                    .body(getDomainType());
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
     }
 
     /**
@@ -105,15 +119,20 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      * @param entity the object to update
      * @return the updated object with the specified ID
      */
-    @RestCall
+
     @Override
     public T updateById(Integer id, T entity) {
-        return getRestClient().put()
-                .uri(URL + getDomainUrl() + "/{id}", id)
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(entity)
-                .retrieve()
-                .body(getDomainType());
+        try {
+            return getRestClient().put()
+                    .uri(URL + getDomainUrl() + "/{id}", id)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(entity)
+                    .retrieve()
+                    .body(getDomainType());
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
+
     }
 
     /**
@@ -121,13 +140,17 @@ public abstract class AbstractRestClient<T> implements Client<T> {
      *
      * @param id the id of the object to delete
      */
-    @RestCall
+
     @Override
     public void deleteById(Integer id) {
-        getRestClient().delete()
-                .uri(URL + getDomainUrl() + "/{id}", id)
-                .retrieve()
-                .toBodilessEntity();
+        try {
+            getRestClient().delete()
+                    .uri(URL + getDomainUrl() + "/{id}", id)
+                    .retrieve()
+                    .toBodilessEntity();
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
     }
 
     /**
