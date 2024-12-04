@@ -3,9 +3,11 @@ package com.vaka.daily_client.client.blocked;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.vaka.daily_client.exception.ServerNotRespondingException;
 import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
@@ -43,10 +45,14 @@ public class UserRestClient extends AbstractRestClient<User> implements UserClie
 
     @Override
     public User getByTelegramId(Long tgId) {
-        return restClient.get()
-                .uri(URL + getDomainUrl() + "/search?tgId=" + tgId)
-                .retrieve()
-                .body(getDomainType());
+        try {
+            return restClient.get()
+                    .uri(URL + getDomainUrl() + "/search?tgId=" + tgId)
+                    .retrieve()
+                    .body(getDomainType());
+        } catch (ResourceAccessException ignored) {
+            throw new ServerNotRespondingException();
+        }
     }
 
     @Override

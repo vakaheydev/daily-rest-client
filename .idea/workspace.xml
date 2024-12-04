@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/RestClientConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +88,7 @@
       <command value="mvn clena install" />
       <command value="mvn clean install" />
       <command value="mvn install" />
+      <command value="mvn clean install -DskipTests=true" />
       <command value="mvn install -DskipTests=true" />
     </option>
   </component>
@@ -290,7 +290,8 @@
       <workItem from="1733151742442" duration="3157000" />
       <workItem from="1733156502997" duration="13000" />
       <workItem from="1733156630818" duration="529000" />
-      <workItem from="1733225243331" duration="325000" />
+      <workItem from="1733225243331" duration="895000" />
+      <workItem from="1733310167565" duration="88000" />
     </task>
     <servers />
   </component>
@@ -307,7 +308,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/ResponseErrorDeserializer.java</url>
-          <line>30</line>
+          <line>29</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
@@ -447,7 +448,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/ResponseErrorDeserializer.java</url>
-          <line>23</line>
+          <line>22</line>
           <properties class="com.vaka.daily_client.model.serialization.ResponseErrorDeserializer">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
