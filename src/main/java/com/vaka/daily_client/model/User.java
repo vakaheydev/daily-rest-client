@@ -41,21 +41,21 @@ public class User {
     @JsonIgnoreProperties({"user"})
     private List<Schedule> schedules = new ArrayList<>();
 
-    private Long tgId;
+    private Long telegramId;
 
     public User(Integer id) {
         this.id = id;
     }
 
     public User(Integer id, String login, String password, String firstName, String secondName, String patronymic,
-                Long tgId) {
+                Long telegramId) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;
-        this.tgId = tgId;
+        this.telegramId = telegramId;
     }
 
     public User(String login, String password, String firstName, String secondName, String patronymic) {
@@ -80,7 +80,7 @@ public class User {
                 ", secondName='" + secondName + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", userType=" + (userType == null ? "undefined" : userType.getName()) +
-                ", tgId(optional)=" + tgId +
+                ", telegramId(optional)=" + telegramId +
                 ", schedules=" + schedules.size() +
                 '}';
     }

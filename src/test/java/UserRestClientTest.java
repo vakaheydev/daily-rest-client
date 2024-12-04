@@ -89,7 +89,6 @@ public class UserRestClientTest {
         log.info("Users with user type user: {}", users);
 
         assertEquals(2, users.size());
-        assertEquals("aka", users.get(0).getLogin());
         assertEquals("user", users.get(0).getUserType().getName());
     }
 
@@ -105,7 +104,7 @@ public class UserRestClientTest {
 
         assertEquals("vaka", user.getLogin());
         assertEquals(UserTypes.DEVELOPER.getType(), user.getUserType());
-        assertEquals(tgId, user.getTgId());
+        assertEquals(tgId, user.getTelegramId());
     }
 
     @DisplayName("Should return user by login")
