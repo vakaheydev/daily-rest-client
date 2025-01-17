@@ -7,6 +7,7 @@ import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.TaskNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
+import com.vaka.daily_client.model.TaskType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,7 +92,7 @@ public class TaskRestClientTest {
         Schedule schedule = scheduleClient.getById(2);
         log.info("Schedule before task created: {}", schedule);
 
-        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, 2);
+        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, 2, TaskType.SINGULAR);
         log.info("Task to JSON: {}", mapper.writeValueAsString(task));
         Task postedTask = taskClient.create(task);
         createdTask = postedTask;

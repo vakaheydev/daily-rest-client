@@ -4,6 +4,7 @@ import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.ScheduleNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
+import com.vaka.daily_client.model.TaskType;
 import com.vaka.daily_client.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
@@ -100,7 +101,7 @@ public class ScheduleRestClientTest {
 
         String newName = "updated_schedule";
         createdSchedule.setName(newName);
-        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, createdSchedule.getId());
+        Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, createdSchedule.getId(), TaskType.SINGULAR);
         createdSchedule.addTask(task);
 
 
@@ -121,6 +122,7 @@ public class ScheduleRestClientTest {
     @Test
     @Order(4)
     void testDelete() {
+        assertNotNull(createdSchedule);
         assertNotNull(createdSchedule.getId());
         client.deleteById(createdSchedule.getId());
 

@@ -7,7 +7,8 @@ public enum DomainType {
     USER("api/user"),
     USER_TYPE("api/user_type"),
     SCHEDULE("api/schedule"),
-    TASK("api/task");
+    TASK("api/task"),
+    TASK_TYPE("api/task_type");
 
     private final String path;
 

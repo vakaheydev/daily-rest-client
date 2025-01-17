@@ -1,5 +1,7 @@
 package com.vaka.daily_client.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.vaka.daily_client.model.serialization.TaskDeserializer;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -29,4 +31,6 @@ public class Task {
     private Boolean status;
 
     private Integer scheduleId;
+
+    private TaskType taskType;
 }

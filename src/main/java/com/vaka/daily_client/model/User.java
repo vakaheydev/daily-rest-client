@@ -43,6 +43,8 @@ public class User {
 
     private Long telegramId;
 
+    private UserNotification userNotification;
+
     public User(Integer id) {
         this.id = id;
     }
@@ -82,6 +84,7 @@ public class User {
                 ", userType=" + (userType == null ? "undefined" : userType.getName()) +
                 ", telegramId(optional)=" + telegramId +
                 ", schedules=" + schedules.size() +
+                ", userNotification=" + (userNotification == null ? "undefined" : userNotification.toString()) +
                 '}';
     }
 }
