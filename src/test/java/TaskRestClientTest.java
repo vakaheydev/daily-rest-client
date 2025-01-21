@@ -2,12 +2,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vaka.daily_client.client.blocked.ScheduleRestClient;
 import com.vaka.daily_client.client.blocked.TaskRestClient;
+import com.vaka.daily_client.client.blocked.TaskTypeClient;
+import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.TaskNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
 import com.vaka.daily_client.model.TaskType;
+import com.vaka.daily_client.model.serialization.TaskDeserializer;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +21,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, TaskRestClient.class, ScheduleRestClient.class, JacksonConfig.class})
+@SpringBootTest(classes = {RestClientConfig.class, TaskRestClient.class, ScheduleRestClient.class, TaskTypeRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TaskRestClientTest {
-    @Autowired
-    ObjectMapper mapper;
-
     @Autowired
     TaskRestClient taskClient;
 
@@ -88,12 +88,11 @@ public class TaskRestClientTest {
     @DisplayName("Should create new task")
     @Test
     @Order(2)
-    void testPost() throws JsonProcessingException {
+    void testPost() {
         Schedule schedule = scheduleClient.getById(2);
         log.info("Schedule before task created: {}", schedule);
 
         Task task = new Task(null, "new_task", "description", LocalDateTime.now(), false, 2, TaskType.SINGULAR);
-        log.info("Task to JSON: {}", mapper.writeValueAsString(task));
         Task postedTask = taskClient.create(task);
         createdTask = postedTask;
         log.info("Created task: {}", postedTask);

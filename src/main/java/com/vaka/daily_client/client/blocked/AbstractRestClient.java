@@ -100,16 +100,24 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     @Override
     public T create(T entity) {
+        String response;
         try {
-            return getRestClient().post()
+            response = getRestClient().post()
                     .uri(URL + getDomainUrl())
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(entity)
                     .retrieve()
-                    .body(getDomainType());
+                    .body(String.class);
         } catch (ResourceAccessException ignored) {
             throw new ServerNotRespondingException();
         }
+
+        try {
+            return objectMapper.readValue(response, getDomainType());
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     /**

@@ -1,4 +1,5 @@
 import com.vaka.daily_client.client.blocked.ScheduleRestClient;
+import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
 import com.vaka.daily_client.exception.ScheduleNotFoundException;
@@ -16,7 +17,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, ScheduleRestClient.class, JacksonConfig.class})
+@SpringBootTest(classes = {RestClientConfig.class, ScheduleRestClient.class, TaskTypeRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ScheduleRestClientTest {

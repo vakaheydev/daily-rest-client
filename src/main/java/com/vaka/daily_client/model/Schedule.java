@@ -1,6 +1,7 @@
 package com.vaka.daily_client.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.Nulls;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -14,6 +15,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -47,6 +49,13 @@ public class Schedule {
 
     public void addTask(Task task) {
         tasks.add(task);
+    }
+
+    @JsonProperty("userId")
+    public Integer getUserId() {
+        Objects.requireNonNull(user);
+
+        return user.getId();
     }
 
     @Override

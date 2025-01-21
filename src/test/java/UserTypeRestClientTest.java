@@ -1,3 +1,5 @@
+import com.vaka.daily_client.client.blocked.TaskTypeClient;
+import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.client.blocked.UserTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
@@ -13,7 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {RestClientConfig.class, UserTypeRestClient.class, JacksonConfig.class})
+@SpringBootTest(classes = {RestClientConfig.class, UserTypeRestClient.class, TaskTypeRestClient.class, JacksonConfig.class})
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserTypeRestClientTest {

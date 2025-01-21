@@ -4,26 +4,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.vaka.daily_client.client.blocked.TaskTypeClient;
 import com.vaka.daily_client.model.ResponseError;
 import com.vaka.daily_client.model.Task;
 import com.vaka.daily_client.model.serialization.ResponseErrorDeserializer;
 import com.vaka.daily_client.model.serialization.TaskDeserializer;
-import com.vaka.daily_client.model.serialization.TaskDeserializerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 @ComponentScan(basePackages = "com.vaka.daily_client.model.serialization")
 @Configuration
 public class JacksonConfig {
-    private final TaskDeserializerFactory taskDeserializerFactory;
+    private TaskDeserializer taskDeserializer;
 
     @Autowired
-    public JacksonConfig(TaskDeserializerFactory taskDeserializerFactory) {
-        this.taskDeserializerFactory = taskDeserializerFactory;
+    public JacksonConfig(TaskDeserializer taskDeserializer) {
+        this.taskDeserializer = taskDeserializer;
     }
 
     @Bean
@@ -32,7 +29,7 @@ public class JacksonConfig {
 
         SimpleModule module = new SimpleModule();
         module.addDeserializer(ResponseError.class, new ResponseErrorDeserializer());
-        module.addDeserializer(Task.class, taskDeserializerFactory.create());
+        module.addDeserializer(Task.class, taskDeserializer);
 
         objectMapper.registerModule(module);
         objectMapper.registerModule(new JavaTimeModule());
