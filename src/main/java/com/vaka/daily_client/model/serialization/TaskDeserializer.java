@@ -25,7 +25,7 @@ public class TaskDeserializer extends JsonDeserializer<Task> {
     }
 
     @Override
-    public Task deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JacksonException {
+    public Task deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         JsonNode node = p.getCodec().readTree(p);
 
         Task task = Task.builder()

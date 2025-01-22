@@ -16,6 +16,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.lang.annotation.Annotation;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -71,6 +72,7 @@ public class TaskRestClientTest {
         log.info("Task with ID 1: {}", task);
 
         assertEquals("Прочитать книгу", task.getName());
+        assertEquals("singular", task.getTaskType().getName());
     }
 
     @DisplayName("Should throw TaskNotFound (id)")

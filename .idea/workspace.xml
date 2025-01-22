@@ -7,16 +7,9 @@
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/TaskRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/TaskRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/config/JacksonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/TaskDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/TaskDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/serialization/TaskDeserializerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,21 +145,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TaskRestClientTest.testGetById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vaka-daily-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TaskRestClientTest" />
+      <option name="METHOD_NAME" value="testGetById" />
+      <option name="TEST_OBJECT" value="method" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TaskRestClientTest.testPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vaka-daily-client" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TaskRestClientTest" />
       <option name="METHOD_NAME" value="testPost" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRestClientTest.testGetByWrongTgId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="vaka-daily-client" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserRestClientTest" />
-      <option name="METHOD_NAME" value="testGetByWrongTgId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,21 +213,21 @@
       <item itemvalue="Application.Client Daily" />
       <item itemvalue="JAR Application.REST API" />
       <item itemvalue="JUnit.All Tests" />
+      <item itemvalue="JUnit.TaskRestClientTest.testGetById" />
       <item itemvalue="JUnit.ScheduleRestClientTest.testGetAll" />
       <item itemvalue="JUnit.TaskRestClientTest.testPost" />
       <item itemvalue="JUnit.TaskRestClientTest" />
-      <item itemvalue="JUnit.UserRestClientTest.testGetByWrongTgId" />
       <item itemvalue="JUnit.ScheduleRestClientTest.testPost2" />
       <item itemvalue="Maven.Maven Test" />
       <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TaskRestClientTest.testGetById" />
         <item itemvalue="JUnit.ScheduleRestClientTest.testPost2" />
         <item itemvalue="JUnit.ScheduleRestClientTest.testGetAll" />
         <item itemvalue="JUnit.TaskRestClientTest.testPost" />
         <item itemvalue="JUnit.TaskRestClientTest" />
-        <item itemvalue="JUnit.UserRestClientTest.testGetByWrongTgId" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +313,11 @@
       <workItem from="1737116224109" duration="62000" />
       <workItem from="1737371923910" duration="1074000" />
       <workItem from="1737395227750" duration="899000" />
-      <workItem from="1737441778873" duration="3041000" />
+      <workItem from="1737441778873" duration="3309000" />
+      <workItem from="1737458754728" duration="738000" />
+      <workItem from="1737459691348" duration="811000" />
+      <workItem from="1737534680488" duration="43000" />
+      <workItem from="1737541986682" duration="434000" />
     </task>
     <servers />
   </component>
@@ -331,7 +329,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
-          <line>107</line>
+          <line>109</line>
           <properties class="TaskRestClientTest" method="testPut">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -349,7 +347,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>101</line>
+          <line>110</line>
           <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient" method="create">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -358,8 +356,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
-          <line>95</line>
+          <line>97</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

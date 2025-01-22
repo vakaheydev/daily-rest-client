@@ -1,6 +1,7 @@
 package com.vaka.daily_client.client.blocked;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.vaka.daily_client.client.Client;
@@ -62,13 +63,21 @@ public abstract class AbstractRestClient<T> implements Client<T> {
 
     @Override
     public T getById(Integer id) {
+        String response;
+
         try {
-            return getRestClient().get()
+            response = getRestClient().get()
                     .uri(URL + getDomainUrl() + "/{id}", id)
                     .retrieve()
-                    .body(getDomainType());
+                    .body(String.class);
         } catch (ResourceAccessException ignored) {
             throw new ServerNotRespondingException();
+        }
+
+        try {
+            return objectMapper.readValue(response, getDomainType());
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
     }
 
