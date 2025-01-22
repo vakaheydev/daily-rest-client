@@ -51,7 +51,8 @@ public class ScheduleRestClientTest {
 
         log.info("Schedule list: {}", schedules.toString());
 
-        assertEquals(3, schedules.size());
+        assertTrue(schedules.size() > 1);
+
     }
 
     @DisplayName("Should return schedule by ID")

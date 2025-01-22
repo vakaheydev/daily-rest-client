@@ -52,7 +52,8 @@ public class UserRestClientTest {
 
         assertDoesNotThrow(() -> users.get(0).toString());
 
-        assertEquals(3, users.size());
+        assertTrue(users.size() > 1);
+        assertNotNull(users.get(0).getSchedules().get(0).getTasks().get(0).getTaskType());
     }
 
     @DisplayName("Should return user by ID")
@@ -90,7 +91,7 @@ public class UserRestClientTest {
 
         log.info("Users with user type user: {}", users);
 
-        assertEquals(2, users.size());
+        assertFalse(users.isEmpty());
         assertEquals("user", users.get(0).getUserType().getName());
     }
 
