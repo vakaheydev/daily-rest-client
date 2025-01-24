@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/TaskType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/model/TaskType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,6 +316,12 @@
       <workItem from="1737541986682" duration="434000" />
       <workItem from="1737542612642" duration="39000" />
       <workItem from="1737562883711" duration="349000" />
+      <workItem from="1737563319192" duration="220000" />
+      <workItem from="1737564404520" duration="139000" />
+      <workItem from="1737564768231" duration="604000" />
+      <workItem from="1737627162354" duration="1583000" />
+      <workItem from="1737640229538" duration="25000" />
+      <workItem from="1737716567421" duration="5000" />
     </task>
     <servers />
   </component>
@@ -346,7 +351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/vaka/daily_client/client/blocked/AbstractRestClient.java</url>
-          <line>110</line>
+          <line>116</line>
           <properties class="com.vaka.daily_client.client.blocked.AbstractRestClient" method="create">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

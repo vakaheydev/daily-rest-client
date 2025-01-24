@@ -16,13 +16,4 @@ public class TaskType {
 
     private Integer id;
     private String name;
-
-    public static TaskType of(String name) {
-        return switch (name) {
-            case "singular" -> new TaskType(1, "singular");
-            case "repetitive" -> new TaskType(2, "repetitive");
-            case "regular" -> new TaskType(3, "regular");
-            default -> throw new IllegalArgumentException("Unknown task type: " + name);
-        };
-    }
 }
