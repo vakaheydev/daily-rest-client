@@ -1,9 +1,9 @@
 # Клиент для взаимодействия с REST API
 
-Это клиент, позволяющий легко взаимодействовать с [REST_API](https://github.com/vakaheydev/daily-rest-api)
+Это клиент, позволяющий легко взаимодействовать с [REST API](https://github.com/vakaheydev/daily-rest-api)
 
 ## Особенности
-- **Клиент**: Позволяет [Сайту MVC](https://github.com/vakaheydev/daily-mvc) и [Телеграм боту](https://github.com/vakaheydev/daily-tgbot) взаимодействовать с [REST_API](https://github.com/vakaheydev/daily-rest-api) для управления данными
+- **Клиент**: Позволяет [Сайту MVC](https://github.com/vakaheydev/daily-mvc) и [Телеграм боту](https://github.com/vakaheydev/daily-tgbot) взаимодействовать с [REST API](https://github.com/vakaheydev/daily-rest-api) для управления данными
 
 ## Установка
 
@@ -18,7 +18,7 @@
 
 Чтобы запустить все сервисы (REST API, клиент, MVC и Telegram-бот), выполните следующие команды:
 
-Перейдите в папку с докером в [REST_API](https://github.com/vakaheydev/daily-rest-api):
+Перейдите в папку с докером в [REST API](https://github.com/vakaheydev/daily-rest-api):
 ```sh
 cd ./docker
 ```
