@@ -16,7 +16,7 @@ public class BindingTokenNotFoundException extends ObjectNotFoundException {
 
     public static BindingTokenNotFoundException byValue(String value) {
         var ex = new BindingTokenNotFoundException(
-                String.format("Binding Token with unique value {%d} not found", value));
+                String.format("Binding Token with unique value {%s} not found", value));
         ex.details.put("name", String.valueOf(value));
         return ex;
     }
