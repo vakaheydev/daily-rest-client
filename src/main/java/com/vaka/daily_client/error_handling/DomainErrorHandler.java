@@ -23,16 +23,13 @@ public class DomainErrorHandler {
             return strategyFactory.getNotFoundStrategy(domainType);
         }
 
-        switch (errorType) {
-            case "DataIntegrityViolationException":
-                return new DataIntegrityHandlerStrategy();
-            case "ValidationException":
-                return new ValidationHandlerStrategy();
-            case "HttpMessageNotReadableException":
-                return new HttpMessageNotReadableHandlerStrategy();
-        }
-
-        throw new NoStrategyErrorHandlingException(errorType);
+        return switch (errorType) {
+            case "DataIntegrityViolationException" -> new DataIntegrityHandlerStrategy();
+            case "ValidationException" -> new ValidationHandlerStrategy();
+            case "HttpMessageNotReadableException" -> new HttpMessageNotReadableHandlerStrategy();
+            case "NoResourceFoundException" -> new NoResourceFoundHandlerStrategy();
+            default -> throw new NoStrategyErrorHandlingException(errorType);
+        };
     }
 
     private boolean isNotFoundException(String errorType) {
