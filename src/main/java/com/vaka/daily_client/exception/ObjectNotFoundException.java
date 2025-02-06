@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public class ObjectNotFoundException extends RuntimeException {
-    private final Map<String, String> details = new HashMap<>();
+    protected final Map<String, String> details = new HashMap<>();
     @Getter
     protected final String objectName;
 

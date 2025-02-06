@@ -11,6 +11,7 @@ public class ErrorHandlerStrategyFactory {
             case SCHEDULE -> new ScheduleNotFoundHandlerStrategy();
             case TASK -> new TaskNotFoundHandlerStrategy();
             case TASK_TYPE -> new TaskTypeNotFoundHandlerStrategy();
+            case BINDING_TOKEN -> new BindingTokenNotFoundHandlerStrategy();
         };
     }
 }

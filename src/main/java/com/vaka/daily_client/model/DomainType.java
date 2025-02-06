@@ -8,7 +8,8 @@ public enum DomainType {
     USER_TYPE("api/user_type"),
     SCHEDULE("api/schedule"),
     TASK("api/task"),
-    TASK_TYPE("api/task_type");
+    TASK_TYPE("api/task_type"),
+    BINDING_TOKEN("/api/binding_token");
 
     private final String path;
 
