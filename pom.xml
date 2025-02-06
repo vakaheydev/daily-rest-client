@@ -22,6 +22,7 @@
                             <classifier>spring-boot</classifier>
                             <!--suppress UnresolvedMavenProperty -->
                             <mainClass>${com.vaka.daily_client.Application}</mainClass>
+                            <finalName>client</finalName>
                         </configuration>
                     </execution>
                 </executions>
