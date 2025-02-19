@@ -1,22 +1,17 @@
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vaka.daily_client.client.blocked.ScheduleRestClient;
 import com.vaka.daily_client.client.blocked.TaskRestClient;
-import com.vaka.daily_client.client.blocked.TaskTypeClient;
 import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.exception.TaskNotFoundException;
+import com.vaka.daily_client.exception.notfound.TaskNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
 import com.vaka.daily_client.model.TaskType;
-import com.vaka.daily_client.model.serialization.TaskDeserializer;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.lang.annotation.Annotation;
 import java.time.LocalDateTime;
 import java.util.List;
 
