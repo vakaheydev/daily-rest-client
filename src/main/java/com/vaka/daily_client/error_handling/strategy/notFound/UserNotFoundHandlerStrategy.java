@@ -7,8 +7,8 @@ import com.vaka.daily_client.model.ResponseError;
 public class UserNotFoundHandlerStrategy extends NotFoundHandlerStrategy {
     @Override
     public void throwNotFoundException(ResponseError.ResponseDetails responseDetails) {
-        if (responseDetails.contains("requestedTgId")) {
-            Long tgId = getLongValueFromResponse(responseDetails, "requestedTgId");
+        if (responseDetails.contains("requestedTelegramId")) {
+            Long tgId = getLongValueFromResponse(responseDetails, "requestedTelegramId");
             throw new UserNotFoundException(tgId);
         }
 

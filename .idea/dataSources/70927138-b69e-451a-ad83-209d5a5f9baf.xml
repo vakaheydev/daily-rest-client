@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="vaka_daily_db@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -4265,58 +4265,57 @@ false Zulu
       <Comment>standard public schema</Comment>
       <Current>1</Current>
       <IntrospectionStateNumber>11667</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2025-01-11.15:18:24.996</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2025-01-11.12:18:26</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-01-11.12:18:26</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="273" parent="272" name="daily_user_user_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39083</ObjectId>
-      <SequenceIdentity>1(4)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11608</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="274" parent="272" name="schedule_schedule_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39113</ObjectId>
-      <SequenceIdentity>1(4)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11610</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="275" parent="272" name="task_task_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39134</ObjectId>
-      <SequenceIdentity>1(9)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11612</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="276" parent="272" name="task_type_task_type_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39126</ObjectId>
-      <SequenceIdentity>1(4)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11611</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="277" parent="272" name="user_notification_user_notification_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39100</ObjectId>
-      <SequenceIdentity>1(3)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11609</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="278" parent="272" name="user_type_user_type_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>39075</ObjectId>
-      <SequenceIdentity>1(5)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>11607</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="279" parent="272" name="daily_user">
@@ -4356,57 +4355,57 @@ false Zulu
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="285" parent="279" name="user_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39083</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="286" parent="279" name="user_login">
-      <DasType>varchar(100)|0s</DasType>
       <Position>2</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="287" parent="279" name="user_password">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="288" parent="279" name="user_first_name">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="289" parent="279" name="user_second_name">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="290" parent="279" name="user_patronymic">
-      <DasType>varchar(100)|0s</DasType>
       <Position>6</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="291" parent="279" name="user_telegram_id">
-      <DasType>bigint|0s</DasType>
       <Position>7</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
     <column id="292" parent="279" name="id_user_type">
-      <DasType>integer|0s</DasType>
       <Position>8</Position>
       <StateNumber>11608</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="293" parent="279" name="daily_user_id_user_type_fkey">
@@ -4461,25 +4460,25 @@ false Zulu
       <UnderlyingIndexId>39093</UnderlyingIndexId>
     </key>
     <column id="300" parent="280" name="schedule_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11610</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39113</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="301" parent="280" name="schedule_name">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>11610</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="302" parent="280" name="id_user">
-      <DasType>integer|0s</DasType>
       <Position>3</Position>
       <StateNumber>11610</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="303" parent="280" name="schedule_id_user_fkey">
@@ -4525,52 +4524,52 @@ id_user</ColNames>
       <UnderlyingIndexId>39119</UnderlyingIndexId>
     </key>
     <column id="308" parent="281" name="task_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39134</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="309" parent="281" name="task_name">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="310" parent="281" name="task_description">
-      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="311" parent="281" name="task_deadline">
-      <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="312" parent="281" name="task_status">
-      <DasType>boolean|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
     <column id="313" parent="281" name="id_schedule">
-      <DasType>integer|0s</DasType>
       <Position>6</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="314" parent="281" name="id_task_type">
-      <DasType>integer|0s</DasType>
       <Position>7</Position>
       <StateNumber>11612</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="315" parent="281" name="task_id_schedule_fkey">
@@ -4628,18 +4627,18 @@ pg_catalog</CollationParentNames>
       <UnderlyingIndexId>39140</UnderlyingIndexId>
     </key>
     <column id="321" parent="282" name="task_type_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11611</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39126</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="322" parent="282" name="task_type_name">
-      <DasType>varchar(100)|0s</DasType>
       <Position>2</Position>
       <StateNumber>11611</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="323" parent="282" name="task_type_pkey">
@@ -4674,25 +4673,25 @@ pg_catalog</CollationParentNames>
       <UnderlyingIndexId>39132</UnderlyingIndexId>
     </key>
     <column id="327" parent="283" name="user_notification_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11609</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39100</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="328" parent="283" name="last_notified">
-      <DasType>timestamp|0s</DasType>
       <Position>2</Position>
       <StateNumber>11609</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="329" parent="283" name="id_user">
-      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>11609</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="330" parent="283" name="user_notification_id_user_fkey">
@@ -4734,18 +4733,18 @@ pg_catalog</CollationParentNames>
       <UnderlyingIndexId>39106</UnderlyingIndexId>
     </key>
     <column id="335" parent="284" name="user_type_id">
-      <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>11607</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>39075</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="336" parent="284" name="user_type_name">
-      <DasType>varchar(100)|0s</DasType>
       <Position>2</Position>
       <StateNumber>11607</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="337" parent="284" name="user_type_pkey">
