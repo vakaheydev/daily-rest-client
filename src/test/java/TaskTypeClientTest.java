@@ -1,7 +1,7 @@
 import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.exception.TaskTypeNotFoundException;
+import com.vaka.daily_client.exception.notfound.TaskTypeNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.TaskType;
 import lombok.extern.slf4j.Slf4j;

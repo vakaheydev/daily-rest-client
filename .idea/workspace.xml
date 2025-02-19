@@ -5,10 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b05549b-6b52-40c1-807f-8b6c0ae0e74f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf/storage_v2/_src_/database/vaka_daily_db.op0NBA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf/storage_v2/_src_/database/vaka_daily_db.op0NBA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf/storage_v2/_src_/database/vaka_daily_db.op0NBA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70927138-b69e-451a-ad83-209d5a5f9baf/storage_v2/_src_/database/vaka_daily_db.op0NBA/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/AbstractNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/AbstractNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/BindingTokenNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/BindingTokenNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/ScheduleNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaskNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaskNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaskTypeNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/TaskTypeNotFoundHandlerStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/error_handling/strategy/notFound/UserTypeNotFoundHandlerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/BindingTokenNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/BindingTokenNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ObjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/ObjectNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/ScheduleNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/ScheduleNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/TaskNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/TaskNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/TaskTypeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/TaskTypeNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/UserTypeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaka/daily_client/exception/notfound/UserTypeNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ScheduleRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TaskRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TaskTypeClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TaskTypeClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTypeRestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,37 +72,37 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.All Tests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserRestClientTest.testGetByWrongTgId.executor&quot;: &quot;Debug&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vaka/Documents/vaka-daily-client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All Tests.executor": "Run",
+    "JUnit.UserRestClientTest.testGetByWrongTgId.executor": "Debug",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "feature-refactor-onfe",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Vaka/Documents/vaka-daily-client/src/main/java/com/vaka/daily_client/exception/notfound",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -85,6 +111,7 @@
       <recent name="com.vaka.daily_client.error_handling" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vaka\Documents\vaka-daily-client\src\main\java\com\vaka\daily_client\exception\notfound" />
       <recent name="C:\Users\Vaka\Documents\mvc-vaka-daily\src\main\java\com\vaka\daily\exception" />
       <recent name="C:\Users\Vaka\Documents\mvc-vaka-daily\src\main\java\com\vaka\daily" />
       <recent name="C:\Users\Vaka\Documents\mvc-vaka-daily\src\main\java\com\vaka\daily\model" />
@@ -354,6 +381,8 @@
       <workItem from="1739786065010" duration="299000" />
       <workItem from="1739822108409" duration="16000" />
       <workItem from="1739914192841" duration="519000" />
+      <workItem from="1739984286456" duration="153000" />
+      <workItem from="1739984569395" duration="1235000" />
     </task>
     <servers />
   </component>
@@ -365,7 +394,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
-          <line>109</line>
+          <line>104</line>
           <properties class="TaskRestClientTest" method="testPut">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -401,12 +430,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
-          <line>97</line>
+          <line>92</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TaskRestClientTest.java</url>
-          <line>67</line>
+          <line>62</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

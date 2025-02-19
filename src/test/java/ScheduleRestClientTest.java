@@ -2,7 +2,7 @@ import com.vaka.daily_client.client.blocked.ScheduleRestClient;
 import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.exception.ScheduleNotFoundException;
+import com.vaka.daily_client.exception.notfound.ScheduleNotFoundException;
 import com.vaka.daily_client.model.Schedule;
 import com.vaka.daily_client.model.Task;
 import com.vaka.daily_client.model.TaskType;

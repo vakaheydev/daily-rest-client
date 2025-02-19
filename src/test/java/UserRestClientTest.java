@@ -1,9 +1,8 @@
-import com.vaka.daily_client.client.blocked.TaskTypeClient;
 import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.client.blocked.UserRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
-import com.vaka.daily_client.exception.UserNotFoundException;
+import com.vaka.daily_client.exception.notfound.UserNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.User;
 import com.vaka.daily_client.model.UserTypes;
