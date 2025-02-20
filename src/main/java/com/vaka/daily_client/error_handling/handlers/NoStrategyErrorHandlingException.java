@@ -1,4 +1,4 @@
-package com.vaka.daily_client.error_handling.strategy;
+package com.vaka.daily_client.error_handling.handlers;
 
 public class NoStrategyErrorHandlingException extends RuntimeException {
     public NoStrategyErrorHandlingException(String errorType) {

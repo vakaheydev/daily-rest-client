@@ -2,6 +2,7 @@ import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.client.blocked.UserRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.exception.DuplicateEntityException;
 import com.vaka.daily_client.exception.notfound.UserNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.User;
@@ -140,12 +141,12 @@ public class UserRestClientTest {
         assertThrows(UserNotFoundException.class, () -> client.getByTelegramId(-1L));
     }
 
-    @DisplayName("Should throw Validation (duplicate login)")
+    @DisplayName("Should throw DuplicateException (duplicate login)")
     @Test
     void testPost() {
         User user = new User("vaka", "new_password", "firstName", "secondName", "patronymic");
 
-        assertThrows(ValidationException.class, () -> client.create(user));
+        assertThrows(DuplicateEntityException.class, () -> client.create(user));
     }
 
     @DisplayName("Should create new user")
