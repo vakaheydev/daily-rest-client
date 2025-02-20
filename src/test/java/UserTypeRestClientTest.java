@@ -93,6 +93,12 @@ public class UserTypeRestClientTest {
     @Test
     void testPost() {
         UserType userType = new UserType(null, "user");
+        try {
+            client.create(userType);
+        } catch (DuplicateEntityException e) {
+            log.info(e.getDuplicates().toString());
+        }
+
         assertThrows(DuplicateEntityException.class, () -> client.create(userType));
     }
 
