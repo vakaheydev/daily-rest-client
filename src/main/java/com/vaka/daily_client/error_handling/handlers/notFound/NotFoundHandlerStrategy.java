@@ -1,11 +1,10 @@
-package com.vaka.daily_client.error_handling.strategy;
+package com.vaka.daily_client.error_handling.handlers.notFound;
 
 import com.vaka.daily_client.model.ResponseError;
 
 import static com.vaka.daily_client.model.ResponseError.ResponseDetails;
 
-public abstract class NotFoundHandlerStrategy implements ErrorHandlerStrategy {
-    @Override
+public abstract class NotFoundHandlerStrategy {
     public void handleError(ResponseError responseError) {
         var details = responseError.getDetails()
                 .orElseThrow(() -> new IllegalStateException("Wrong answer from server: not found without details"));

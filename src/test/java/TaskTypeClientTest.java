@@ -1,6 +1,7 @@
 import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.exception.DuplicateEntityException;
 import com.vaka.daily_client.exception.notfound.TaskTypeNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.TaskType;
@@ -69,12 +70,12 @@ public class TaskTypeClientTest {
         assertThrows(TaskTypeNotFoundException.class, () -> client.getById(125));
     }
 
-    @DisplayName("Should throw Validation (duplicate login)")
+    @DisplayName("Should throw DuplicateException (duplicate login)")
     @Test
     void testPost() {
         TaskType type = new TaskType(null, "repetitive");
 
-        assertThrows(ValidationException.class, () -> client.create(type));
+        assertThrows(DuplicateEntityException.class, () -> client.create(type));
     }
 
     @DisplayName("Should create new task type")

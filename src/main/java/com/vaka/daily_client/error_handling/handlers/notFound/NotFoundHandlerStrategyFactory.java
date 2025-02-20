@@ -1,10 +1,10 @@
-package com.vaka.daily_client.error_handling.strategy;
+package com.vaka.daily_client.error_handling.handlers.notFound;
 
-import com.vaka.daily_client.error_handling.strategy.notFound.*;
 import com.vaka.daily_client.model.DomainType;
+import com.vaka.daily_client.model.ResponseError;
 
-public class ErrorHandlerStrategyFactory {
-    public ErrorHandlerStrategy getNotFoundStrategy(DomainType domainType) {
+public class NotFoundHandlerStrategyFactory {
+    public NotFoundHandlerStrategy getNotFoundHandlerStrategy(DomainType domainType, ResponseError responseError) {
         return switch (domainType) {
             case USER -> new UserNotFoundHandlerStrategy();
             case USER_TYPE -> new UserTypeNotFoundHandlerStrategy();
