@@ -34,6 +34,7 @@ public class JSONResponseErrorHandler implements ResponseErrorHandler {
     public void handleError(ClientHttpResponse response) throws IOException {
         log.error("An error occurred in RestClient request, response: {} : {}", response.getStatusText(),
                 response.getStatusCode());
+        throw new IllegalStateException("No handler to handle such response");
     }
 
     @Override
@@ -43,8 +44,9 @@ public class JSONResponseErrorHandler implements ResponseErrorHandler {
 
         log.error("Response error on '{}': {}", url, responseError.toString());
 
-        DomainErrorHandler domainErrorHandler = new DomainErrorHandler();
-        domainErrorHandler.handleError(responseError, url, domainType);
+        ErrorHandlerFactory errorHandlerFactory = new ErrorHandlerFactory();
+        ErrorHandler errorHandler = errorHandlerFactory.getErrorHandler(domainType, responseError);
+        errorHandler.handleError(domainType, responseError);
     }
 
     private ResponseError getResponseError(ClientHttpResponse response) {

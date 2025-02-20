@@ -2,6 +2,7 @@ import com.vaka.daily_client.client.blocked.TaskTypeRestClient;
 import com.vaka.daily_client.client.blocked.UserTypeRestClient;
 import com.vaka.daily_client.config.JacksonConfig;
 import com.vaka.daily_client.config.RestClientConfig;
+import com.vaka.daily_client.exception.DuplicateEntityException;
 import com.vaka.daily_client.exception.notfound.UserTypeNotFoundException;
 import com.vaka.daily_client.exception.ValidationException;
 import com.vaka.daily_client.model.UserType;
@@ -88,12 +89,11 @@ public class UserTypeRestClientTest {
         assertThrows(UserTypeNotFoundException.class, () -> client.getByUniqueName("abc"));
     }
 
-    @DisplayName("Should throw Validation (duplicate login)")
+    @DisplayName("Should throw DuplicateException (duplicate login)")
     @Test
     void testPost() {
         UserType userType = new UserType(null, "user");
-
-        assertThrows(ValidationException.class, () -> client.create(userType));
+        assertThrows(DuplicateEntityException.class, () -> client.create(userType));
     }
 
     @DisplayName("Should create new user type")
